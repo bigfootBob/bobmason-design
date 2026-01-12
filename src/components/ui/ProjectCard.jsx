@@ -1,18 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ProjectCard.scss';
 
 const ProjectCard = ({ title, description, tags, linkUrl, linkText, imageUrl }) => {
   return (
     <article className="project-card">
       <div className="card-image">
-        <img src={imageUrl} alt={`Screenshot of ${title} project`} />
+        {/* If imageUrl exists, show it. If not, show a placeholder or nothing */}
+        {imageUrl && <img src={imageUrl} alt={`Screenshot of ${title} project`} />}
       </div>
       
       <div className="card-content">
         <h3>{title}</h3>
         
         <div className="tags" aria-label="Technologies used">
-          {tags.map((tag, index) => (
+          {tags && tags.map((tag, index) => (
             <span key={index} className="tag">{tag}</span>
           ))}
         </div>
@@ -25,6 +27,22 @@ const ProjectCard = ({ title, description, tags, linkUrl, linkText, imageUrl }) 
       </div>
     </article>
   );
+};
+
+// Define "Contract" for this component
+ProjectCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string), 
+  linkUrl: PropTypes.string.isRequired,
+  linkText: PropTypes.string,               
+  imageUrl: PropTypes.string
+};
+
+// Optional: Set default values
+ProjectCard.defaultProps = {
+  linkText: "View Project",
+  tags: []
 };
 
 export default ProjectCard;

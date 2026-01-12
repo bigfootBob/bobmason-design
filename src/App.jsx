@@ -22,8 +22,16 @@ function App() {
         </section>
 
         <section className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
-           
-           {projectData.map((project) => (
+              {/* Debugging: Check if data exists in the console */}
+              {console.log("Current Data:", projectData)}
+
+            {projectData.map((project) => (
+              <ProjectCard 
+                key={project.id} 
+                {...project}
+              />
+            ))}
+           {/* {projectData.map((project) => (
              <ProjectCard 
                 key={project.id}
                 title={project.title}
@@ -33,7 +41,7 @@ function App() {
                 linkText={project.linkText}
                 imageUrl={project.imageUrl}
              />
-           ))}
+           ))} */}
 
         </section>
       </main>
