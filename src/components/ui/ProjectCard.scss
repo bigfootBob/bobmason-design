@@ -1,0 +1,17 @@
+$primary-color: #0056b3;
+
+.project-card {
+  border: 1px solid #e0e0e0;
+  
+  .card-content {
+    padding: 1.5rem;
+    
+    h3 {
+      color: $primary-color;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import SkipLink from './components/accessibility/SkipLink';
 import ProjectCard from './components/ui/ProjectCard'; 
+import { projectData } from './data/projects'; 
 
 function App() {
   return (
@@ -15,7 +16,6 @@ function App() {
       </header>
 
       <main id="main-content" role="main" style={{ padding: '2rem' }}>
-        
         <section className="intro">
           <h2>Recent Work</h2>
           <p>Projects focused on accessible UI and modern frontend architecture.</p>
@@ -23,23 +23,17 @@ function App() {
 
         <section className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
            
-           <ProjectCard 
-              title="Uncanny Coffee Hour"
-              description="A fully accessible podcast platform featuring an AI co-host (Soercia). Built to ensure WCAG 2.1 compliance."
-              tags={['Svelte', 'A11y', 'Audio API']}
-              linkUrl="https://uncannycoffeehour.com" // Update this if needed
-              linkText="Listen to Episodes"
-              imageUrl="https://placehold.co/600x400/222/fff?text=Uncanny+Coffee" // Placeholder for now
-           />
-
-           <ProjectCard 
-              title="Bob Mason Design System"
-              description="A React-based component library demonstrating best practices in semantic HTML and keyboard navigation."
-              tags={['React', 'Vite', 'CSS Modules']}
-              linkUrl="#" 
-              linkText="View Source on GitHub"
-              imageUrl="https://placehold.co/600x400/0056b3/fff?text=Portfolio" 
-           />
+           {projectData.map((project) => (
+             <ProjectCard 
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                linkUrl={project.linkUrl}
+                linkText={project.linkText}
+                imageUrl={project.imageUrl}
+             />
+           ))}
 
         </section>
       </main>
