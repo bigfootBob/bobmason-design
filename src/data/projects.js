@@ -3,11 +3,11 @@ export const projectData = [
     {
       id: 1,
       title: "Uncanny Coffee Hour",
-      description: "A fully accessible podcast platform featuring an AI co-host (Soercia). Built to ensure WCAG 2.1 compliance.",
+      description: "A fully accessible podcast platform featuring an AI co-host. Built to ensure WCAG 2.1 compliance.",
       tags: ["Svelte", "A11y", "Audio API"],
-      linkUrl: "https://uncannycoffeehour.com",
+      linkUrl: "https://www.uncannycoffeepodcast.com/",
       linkText: "Listen to Episodes",
-      imageUrl: "https://placehold.co/600x400/222/fff?text=Uncanny+Coffee" 
+      imageUrl: "https://www.uncannycoffeepodcast.com/wp-content/uploads/2025/08/old_radio.png" 
     },
     {
       id: 2,
