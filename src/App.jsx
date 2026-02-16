@@ -1,55 +1,40 @@
 import React from 'react';
-import SkipLink from './components/accessibility/SkipLink';
-import ProjectCard from './components/ui/ProjectCard'; 
-import { projectData } from './data/projects'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// layout components
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+
+// pages
+import Home from './pages/Home';
+// import Work from './pages/Work';
+// import Lab from './pages/Lab';
+// import About from './pages/About';
+
+// styles
+import './App.scss';
 
 function App() {
   return (
-    <div className="app-container">
-      <SkipLink />
+    <Router>
+      <div className="app-wrapper">
       
-      <header role="banner" style={{ padding: '2rem', textAlign: 'center' }}>
-        <nav role="navigation" aria-label="Main">
-          <h1>Robert Mason</h1>
-          <p>Accessibility Specialist | Design Technologist</p>
-        </nav>
-      </header>
+        <Header />
 
-      <main id="main-content" role="main" style={{ padding: '2rem' }}>
-        <section className="intro">
-          <h2>Recent Work</h2>
-          <p>Projects focused on accessible UI and modern frontend architecture.</p>
-        </section>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/work" element={<Work />} /> */}
+          {/* <Route path="/lab" element={<Lab />} /> */}
+          {/* <Route path="/about" element={<About />} /> */}
+          
+          {/* Fallback 404 Route */}
+          <Route path="*" element={<div style={{ padding: '10rem', textAlign: 'center', color: 'white' }}>404 - Lost in the woods</div>} />
+        </Routes>
 
-        <section className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
-              {/* Debugging: Check if data exists in the console */}
-              {console.log("Current Data:", projectData)}
-
-            {projectData.map((project) => (
-              <ProjectCard 
-                key={project.id} 
-                {...project}
-              />
-            ))}
-           {/* {projectData.map((project) => (
-             <ProjectCard 
-                key={project.id}
-                title={project.title}
-                description={project.description}
-                tags={project.tags}
-                linkUrl={project.linkUrl}
-                linkText={project.linkText}
-                imageUrl={project.imageUrl}
-             />
-           ))} */}
-
-        </section>
-      </main>
-
-      <footer role="contentinfo" style={{ textAlign: 'center', padding: '2rem', marginTop: '2rem', borderTop: '1px solid #ddd' }}>
-        <p>© {new Date().getFullYear()} Robert Mason</p>
-      </footer>
-    </div>
+        <Footer />
+        
+      </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,91 @@
+.heroSection {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: #0f0b08;
+  color: #fff;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.greeting {
+  font-family: 'Courier New', monospace;
+  color: #c28e42;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  letter-spacing: -1px;
+
+  span {
+    color: #a0a0a0;
+  }
+}
+
+.credentials {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+
+  .badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #e0e0e0;
+  }
+}
+
+.description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #a0a0a0;
+  max-width: 700px;
+  margin-bottom: 3rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+
+  .primaryBtn {
+    background: #c28e42;
+    color: #0f0b08;
+    &:hover {
+      background: #fff;
+      transform: translateY(-2px);
+    }
+  }
+
+  .secondaryBtn {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    &:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+}

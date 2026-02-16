@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import './ProjectCard.scss';
 
@@ -6,7 +5,6 @@ const ProjectCard = ({ title, description, tags, linkUrl, linkText, imageUrl }) 
   return (
     <article className="project-card">
       <div className="card-image">
-        {/* If imageUrl exists, show it. If not, show a placeholder or nothing */}
         {imageUrl && <img src={imageUrl} alt={`Screenshot of ${title} project`} />}
       </div>
       
@@ -29,7 +27,7 @@ const ProjectCard = ({ title, description, tags, linkUrl, linkText, imageUrl }) 
   );
 };
 
-// Define "Contract" for this component
+// Contract for component
 ProjectCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
@@ -39,7 +37,7 @@ ProjectCard.propTypes = {
   imageUrl: PropTypes.string
 };
 
-// Optional: Set default values
+// default val
 ProjectCard.defaultProps = {
   linkText: "View Project",
   tags: []

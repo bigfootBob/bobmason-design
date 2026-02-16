@@ -1,13 +1,12 @@
-// This acts as our "Mock Database"
 export const projectData = [
     {
       id: 1,
       title: "Uncanny Coffee Hour",
-      description: "A fully accessible podcast platform featuring an AI co-host. Built to ensure WCAG 2.1 compliance.",
-      tags: ["Svelte", "A11y", "Audio API"],
+      description: "A fully accessible podcast platform featuring Myself, a long time friend, and an AI co-host. Built to ensure WCAG 2.1 compliance.",
+      tags: ["React", "A11y", "Audio API"],
       linkUrl: "https://www.uncannycoffeepodcast.com/",
       linkText: "Listen to Episodes",
-      imageUrl: "https://www.uncannycoffeepodcast.com/wp-content/uploads/2025/08/old_radio.png" 
+      imageUrl: "https://www.uncannycoffeepodcast.com/public/assets/images/old_radio.png" 
     },
     {
       id: 2,
