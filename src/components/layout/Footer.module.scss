@@ -1,54 +1,88 @@
-.footer {
-  background: #0a0705;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 4rem 2rem 2rem;
-  color: #a0a0a0;
+.commsFooter {
+  background-color: var(--color-starfleet-cream);
+  border-top: 4px solid var(--color-console-charcoal);
+  padding: 4rem 0 2rem 0;
+  margin-top: 6rem;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  flex-direction: column;
+  gap: 3rem;
 
-  h3 {
-    color: #fff;
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-  }
-
-  p {
-    font-size: 0.9rem;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
-.links {
-  display: flex;
-  gap: 1.5rem;
+.branding {
+  max-width: 400px;
 
-  a {
-    color: #c28e42;
+  .logoInitials {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-starfleet-cream);
+    background-color: var(--color-console-charcoal);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-sharp);
+    margin-bottom: 1rem;
+    box-shadow: 4px 4px 0px var(--color-tos-olive);
+  }
+
+  .signoff {
+    color: var(--color-console-charcoal);
+    opacity: 0.8;
+    line-height: 1.8;
+  }
+}
+
+.linkGrid {
+  display: flex;
+  gap: 4rem;
+}
+
+.linkColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  .columnHeader {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-tos-olive);
+    margin-bottom: 0.5rem;
+  }
+
+  .link {
+    color: var(--color-console-charcoal);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
+    font-weight: 500;
+    transition: color 0.2s, transform 0.2s;
+    display: inline-block;
 
     &:hover {
-      color: #fff;
+      color: var(--color-tos-olive);
+      transform: translateX(4px);
     }
   }
 }
 
 .copyright {
-  text-align: center;
-  font-size: 0.8rem;
-  color: #666;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding-top: 2rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 4rem auto 0;
+  padding: 0 2rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--color-console-charcoal);
+  opacity: 0.6;
+  text-align: center;
 }

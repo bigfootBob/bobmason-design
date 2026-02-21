@@ -1,37 +1,28 @@
-import { NavLink } from 'react-router-dom';
 import styles from './Header.module.scss';
 
 const Header = () => {
   return (
-    <header className={styles.header}>
+    <header className={styles.commsConsole}>
       <div className={styles.container}>
-        {/* TODO: Logo / Brand */}
+        {/* TODO: The Brand / Logo */}
         <div className={styles.brand}>
-          <NavLink to="/" className={styles.logo}>
-            BobMason<span>.design</span>
-          </NavLink>
+          <a href="#top" className={styles.logo}>
+            <span className={styles.logoInitials}>R.M.</span>
+            <span className={styles.logoTitle}>Agentic Architect</span>
+          </a>
         </div>
 
-        <nav className={styles.nav}>
-          <ul>
+        <nav className={styles.navigation} aria-label="Main navigation">
+          <ul className={styles.navList}>
             <li>
-              <NavLink to="/work" className={({ isActive }) => isActive ? styles.active : ''}>
-                Work
-              </NavLink>
+              <a href="#projects" className={styles.navLink}>Databanks</a>
             </li>
             <li>
-              <NavLink to="/lab" className={({ isActive }) => isActive ? styles.active : ''}>
-                Lab
-              </NavLink>
+              <a href="#manifest" className={styles.navLink}>Manifest</a>
             </li>
             <li>
-              <NavLink to="/about" className={({ isActive }) => isActive ? styles.active : ''}>
-                About
-              </NavLink>
-            </li>
-            <li>
-              <a href="mailto:your-email@example.com" className={styles.ctaBtn}>
-                Let's Talk
+              <a href="#comms" className={`${styles.navLink} ${styles.primaryAction}`}>
+                Open Comms
               </a>
             </li>
           </ul>

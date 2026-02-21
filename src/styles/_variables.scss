@@ -1,0 +1,41 @@
+:root {
+  // The Core Palette
+  --color-starfleet-cream: #F4F1EA;
+  --color-console-charcoal: #2B2B2B;
+  --color-tos-olive: #4A5D23;
+  --color-walnut-wood: #5C4033;
+  --color-communicator-gold: #D4AF37;
+
+  // Typography
+  // Space Grotesk brings that geometric, retro-futuristic sci-fi feel
+  --font-heading: 'Space Grotesk', sans-serif;
+  // Inter is the ultimate accessible, highly legible workhorse for paragraphs
+  --font-body: 'Inter', sans-serif;
+
+  // Spacing & Rhythm (The MCM Grid)
+  --space-sm: 0.5rem;
+  --space-md: 1.25rem;
+  --space-lg: 3rem;
+  --space-xl: 6rem;
+
+  // UI Elements (Tactile, Analog feel)
+  --border-radius-pill: 50px; // For buttons
+  --border-radius-sharp: 4px; // For cards/consoles
+  // hard, unblurred shadow typical of 1960s graphic design
+  --shadow-retro-hard: 6px 6px 0px var(--color-tos-olive);
+}
+
+body {
+  background-color: var(--color-starfleet-cream);
+  color: var(--color-console-charcoal);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em; 
+}

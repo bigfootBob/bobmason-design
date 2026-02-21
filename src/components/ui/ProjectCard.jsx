@@ -1,46 +1,27 @@
-import PropTypes from 'prop-types';
-import './ProjectCard.scss';
+import styles from './ProjectCard.module.scss';
 
-const ProjectCard = ({ title, description, tags, linkUrl, linkText, imageUrl }) => {
+const ProjectCard = ({ project }) => {
+  const { title, category, description, link, isDarkMode } = project;
+
   return (
-    <article className="project-card">
-      <div className="card-image">
-        {imageUrl && <img src={imageUrl} alt={`Screenshot of ${title} project`} />}
+    <article className={styles.retroCard}>
+      <div className={styles.cardVisual}>
+        <div className={`${styles.wireframePlaceholder} ${isDarkMode ? styles.darkMode : ''}`}>
+          {title}
+        </div>
       </div>
       
-      <div className="card-content">
-        <h3>{title}</h3>
+      <div className={styles.cardContent}>
+        <span className={styles.categoryTag}>{category}</span>
+        <h3 className={styles.cardTitle}>{title}</h3>
+        <p className={styles.cardDesc}>{description}</p>
         
-        <div className="tags" aria-label="Technologies used">
-          {tags && tags.map((tag, index) => (
-            <span key={index} className="tag">{tag}</span>
-          ))}
-        </div>
-
-        <p>{description}</p>
-
-        <a href={linkUrl} className="card-link" target="_blank" rel="noopener noreferrer">
-          {linkText} <span aria-hidden="true">&rarr;</span>
+        <a href={link} className={styles.btnText} target="_blank" rel="noopener noreferrer">
+          Review Documentation &rarr;
         </a>
       </div>
     </article>
   );
-};
-
-// Contract for component
-ProjectCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string), 
-  linkUrl: PropTypes.string.isRequired,
-  linkText: PropTypes.string,               
-  imageUrl: PropTypes.string
-};
-
-// default val
-ProjectCard.defaultProps = {
-  linkText: "View Project",
-  tags: []
 };
 
 export default ProjectCard;
