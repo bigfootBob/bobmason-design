@@ -1,10 +1,11 @@
 export const projects = [
   {
     id: 'p1',
-    title: 'Stolen Bike Closure',
+    title: 'Uncanny Coffee Hour',
     category: 'Creative / Web',
     description: 'Designed and deployed a high-conversion, satirical platform focusing on accessibility and sharp, brutalist UX.',
-    link: 'https://www.stolenbikeclosure.com',
+    link: 'https://www.uncannycoffeepodcast.com/',
+    repo: 'https://github.com/bigfootBob/uncanny-coffee-hour',
     isDarkMode: false,
   },
   {
@@ -13,14 +14,34 @@ export const projects = [
     category: 'Mobile / Product',
     description: 'Leading product strategy and UX/UI design for an upcoming mobile application utilizing agentic workflows for rapid prototyping.',
     link: '#',
+    repo: 'https://github.com/bigfootBob/little-lanterns',
     isDarkMode: true,
   },
   {
     id: 'p3',
+    title: 'Stolen Bike Closure',
+    category: 'Creative / Web',
+    description: 'Designed and deployed a high-conversion, satirical platform focusing on accessibility and sharp, brutalist UX.',
+    link: 'https://www.stolenbikeclosure.com',
+    repo: '',
+    isDarkMode: false,
+  },
+  {
+    id: 'p4',
+    title: 'Baku Worry Eater',
+    category: 'Creative / Mobile / Product',
+    description: 'Designed and deployed a high-conversion, satirical platform focusing on accessibility and sharp, brutalist UX.',
+    link: 'https://www.stolenbikeclosure.com',
+    repo: 'https://github.com/bigfootBob/Baku',
+    isDarkMode: false,
+  },
+  {
+    id: 'p5',
     title: 'Grocery Store Metrics',
     category: 'Data / Power BI',
     description: 'Architected comprehensive business dashboards translating complex operational data into actionable product insights.',
     link: '#',
+    repo: '',
     isDarkMode: false,
   }
 ];
