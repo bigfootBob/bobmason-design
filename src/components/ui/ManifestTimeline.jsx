@@ -5,7 +5,7 @@ const ManifestTimeline = () => {
   return (
     <section className={styles.manifestSection}>
       <div className={styles.sectionHeader}>
-        <h2 className={styles.sectionTitle}>The Manifest</h2>
+        <h2 className={styles.sectionTitle}>Résumé</h2>
         <p className={styles.sectionSubtitle}>Service record, architectural leadership, and credentials.</p>
       </div>
 

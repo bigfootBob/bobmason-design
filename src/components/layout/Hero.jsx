@@ -1,5 +1,5 @@
 import styles from './Hero.module.scss';
-// TODO: import profilePic from '../../assets/profile-placeholder.jpg';
+import profilePic from '../../assets/images/bobngracie-bw.jpg';
 
 const Hero = () => {
   return (
@@ -12,23 +12,27 @@ const Hero = () => {
         </div>
         
         <h1 className={styles.heroHeadline}>
-          UX + Dev + Understanding product + agentic AI all in one human.
+          UX + Dev + Product + Agentic AI
+          <span className={styles.humanBreak}>All in one human.</span>
         </h1>
         
-        <div className={styles.heroActions}>
+        {/* <div className={styles.heroActions}>
           <span className={styles.retroBadge}>CSPO Certified</span>
           <a href="#projects" className={styles.btnPrimary}>Access Databanks</a>
-        </div>
+        </div> */}
 
       </div>
 
       <div className={styles.heroVisual}>
         <div className={styles.portraitFrame}>
-          <div className={styles.halftoneImgPlaceholder}></div>
-          {/* placeholder for pic */}
-          {/* <img src={profilePic} alt="Robert J. Mason" className={styles.halftoneImg} /> */}
+          <img 
+            src={profilePic} 
+            alt="Robert Mason and his dog, a professional design technologist team." 
+            className={styles.halftoneImg} 
+          />
         </div>
       </div>
+
     </section>
   );
 };

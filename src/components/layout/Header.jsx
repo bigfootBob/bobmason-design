@@ -8,21 +8,21 @@ const Header = () => {
         <div className={styles.brand}>
           <a href="#top" className={styles.logo}>
             <span className={styles.logoInitials}>R.M.</span>
-            <span className={styles.logoTitle}>Agentic Architect</span>
+            <span className={styles.logoTitle}>Design Technologist</span>
           </a>
         </div>
 
         <nav className={styles.navigation} aria-label="Main navigation">
           <ul className={styles.navList}>
             <li>
-              <a href="#projects" className={styles.navLink}>Databanks</a>
+              <a href="#projects" className={styles.navLink}>Projects</a>
             </li>
             <li>
-              <a href="#manifest" className={styles.navLink}>Manifest</a>
+              <a href="#manifest" className={styles.navLink}>Résumé</a>
             </li>
             <li>
               <a href="#comms" className={`${styles.navLink} ${styles.primaryAction}`}>
-                Open Comms
+                Comms
               </a>
             </li>
           </ul>
