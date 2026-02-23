@@ -1,6 +1,7 @@
 import Hero from '../components/layout/Hero';
 import ProjectCard from '../components/ui/ProjectCard';
 import ManifestTimeline from '../components/ui/ManifestTimeline';
+import Comms from '../components/layout/Comms';
 import { projects } from '../data/projects';
 
 const Home = () => {
@@ -30,6 +31,9 @@ const Home = () => {
         <div id="manifest">
           <ManifestTimeline />
         </div>
+
+        <Comms />
+
       </main>
 
     </>
