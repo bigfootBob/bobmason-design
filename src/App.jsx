@@ -4,7 +4,7 @@ import Footer from './components/layout/Footer';
 
 import Home from './pages/Home';
 // import Work from './pages/Work';
-// import Lab from './pages/Lab';
+import Lab from './pages/Lab';
 // import About from './pages/About';
 
 import './App.scss';
@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route path="/work" element={<Work />} /> */}
-          {/* <Route path="/lab" element={<Lab />} /> */}
+          <Route path="/lab" element={<Lab />} />
           {/* <Route path="/about" element={<About />} /> */}
           
           {/* Fallback 404 Route */}

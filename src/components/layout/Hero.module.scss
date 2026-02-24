@@ -30,13 +30,12 @@ h1 {
   span {
     color: #a0a0a0;
   }
-    .humanBreak {
-  display: block; // This forces it to drop to the next line
-  
-  // Optional: Add some typographic flair to the punchline
-  color: var(--color-tos-olive); 
-  // font-size: 0.85em; // If you want it slightly subordinated
-  // margin-top: 0.25rem; 
+ 
+  .humanBreak {
+    display: block;
+    color: var(--color-tos-olive); 
+    font-size: 0.85em; // If you want it slightly subordinated
+    // margin-top: 0.25rem; 
   }
 }
 

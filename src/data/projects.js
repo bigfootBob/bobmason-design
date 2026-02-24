@@ -6,6 +6,7 @@ export const projects = [
     description: 'Designed and deployed a high-conversion, satirical platform focusing on accessibility and sharp, brutalist UX.',
     link: 'https://www.uncannycoffeepodcast.com/',
     repo: 'https://github.com/bigfootBob/uncanny-coffee-hour',
+    preview: 'portfolio-preview-uch.webp',
     isDarkMode: false,
   },
   {
@@ -15,7 +16,8 @@ export const projects = [
     description: 'Leading product strategy and UX/UI design for an upcoming mobile application utilizing agentic workflows for rapid prototyping.',
     link: '#',
     repo: 'https://github.com/bigfootBob/little-lanterns',
-    isDarkMode: true,
+    preview: 'portfolio-preview-llanterns.webp',
+    isDarkMode: false,
   },
   {
     id: 'p3',
@@ -23,7 +25,8 @@ export const projects = [
     category: 'Creative / Web',
     description: 'Designed and deployed a high-conversion, satirical platform focusing on accessibility and sharp, brutalist UX.',
     link: 'https://www.stolenbikeclosure.com',
-    repo: '',
+    repo: 'https://github.com/bigfootBob/stolen-bike-closure',
+    preview: 'portfolio-preview-stolenbc.webp',
     isDarkMode: false,
   },
   {
@@ -33,15 +36,17 @@ export const projects = [
     description: 'Designed and deployed a high-conversion, satirical platform focusing on accessibility and sharp, brutalist UX.',
     link: 'https://www.stolenbikeclosure.com',
     repo: 'https://github.com/bigfootBob/Baku',
-    isDarkMode: false,
+    preview: '',
+    isDarkMode: true,
   },
   {
     id: 'p5',
-    title: 'Grocery Store Metrics',
-    category: 'Data / Power BI',
+    title: 'Sarah Walker Portfolio',
+    category: 'Creative / Web',
     description: 'Architected comprehensive business dashboards translating complex operational data into actionable product insights.',
-    link: '#',
-    repo: '',
+    link: 'https://sarahwalker.cloud/',
+    repo: 'https://github.com/bigfootBob/sarah-walker-cloud',
+    preview: 'portfolio-preview-sarah.webp',
     isDarkMode: false,
   }
 ];

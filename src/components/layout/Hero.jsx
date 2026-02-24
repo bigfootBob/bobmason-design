@@ -6,13 +6,13 @@ const Hero = () => {
     <section className={styles.heroConsole}>
       <div className={styles.heroContent}>
         
-        <div className={styles.kickerGroup}>
+        {/* <div className={styles.kickerGroup}>
           <span className={styles.statusIndicator}></span>
           <span className={styles.kicker}>Front-End Developer & Strategist</span>
-        </div>
+        </div> */}
         
         <h1 className={styles.heroHeadline}>
-          UX + Dev + Product + Agentic AI
+          UX + Dev + Agentic AI + PO 
           <span className={styles.humanBreak}>All in one human.</span>
         </h1>
         

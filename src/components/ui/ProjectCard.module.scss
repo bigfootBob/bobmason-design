@@ -70,7 +70,7 @@
   color: var(--color-console-charcoal);
 }
 
-.btnText {
+.btnText, .btnSecondary {
   font-family: var(--font-heading);
   font-weight: bold;
   color: var(--color-console-charcoal);
@@ -86,3 +86,79 @@
     color: var(--color-tos-olive);
   }
 }
+
+// src/components/ui/ProjectCard.module.scss
+
+
+// Keep your existing placeholder styles exactly as they are
+.wireframePlaceholder {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  color: var(--color-console-charcoal);
+  border: 2px dashed var(--color-console-charcoal);
+  padding: 2rem;
+  width: 80%;
+  text-align: center;
+  
+  &.darkMode {
+    background-color: var(--color-console-charcoal);
+    color: var(--color-starfleet-cream);
+    border-style: solid;
+  }
+}
+
+// src/components/ui/ProjectCard.module.scss
+
+.cardVisual {
+  height: 220px;
+  border-bottom: 3px solid var(--color-console-charcoal);
+  
+  // This base color acts as your 10px frame color now
+  background-color: #e5e0d3; 
+  
+  // Default padding for when showing the wireframe box
+  padding: 1rem; 
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+  position: relative;
+
+  // MODIFIER: When a schematic is present
+  &.hasSchematic {
+    // OLD SETTINGS (Delete or comment these out):
+    // padding: 0; 
+    // background-color: var(--color-starfleet-cream); 
+
+    // NEW SETTING:
+    // Create the precise 10px frame around the image
+    padding: 20px; 
+    // We don't need to set background-color here because it will inherit #e5e0d3 from the parent rule above.
+  }
+}
+
+// THE SCHEMATIC IMAGE STYLES
+// Because the parent now has 10px padding, width/height of 100% 
+// will fill the remaining space inside that padding.
+.schematicImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center; 
+  border: 2px solid #000;
+  
+  // Optional: Add a subtle border to the image itself to define it inside the frame
+  // border: 2px solid var(--color-console-charcoal);
+
+  transition: transform 0.4s ease, filter 0.4s ease;
+  mix-blend-mode: multiply; 
+  opacity: 0.9;
+
+  .retroCard:hover & {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+// ... remaining styles ...
