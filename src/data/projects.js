@@ -37,11 +37,11 @@ export const projects = [
     link: 'https://www.stolenbikeclosure.com',
     repo: 'https://github.com/bigfootBob/Baku',
     preview: 'portfolio-preview-baku.webp',
-    isDarkMode: true,
+    isDarkMode: false,
   },
   {
     id: 'p5',
-    title: 'Sarah Walker Portfolio',
+    title: 'Sarah Walker Resume',
     category: 'Creative / Web',
     description: 'Architected comprehensive business dashboards translating complex operational data into actionable product insights.',
     link: 'https://sarahwalker.cloud/',

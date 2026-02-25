@@ -1,19 +1,23 @@
 import { experience } from '../../data/experience';
-import styles from './ManifestTimeline.module.scss';
+import styles from './ResumeTimeline.module.scss';
 
-const ManifestTimeline = () => {
+const ResumeTimeline = () => {
   return (
-    <section className={styles.manifestSection}>
+    <section className={styles.resumeSection}>
       <div className={styles.sectionHeader}>
         <h2 className={styles.sectionTitle}>Résumé</h2>
-        <p className={styles.sectionSubtitle}>Service record, architectural leadership, and credentials.</p>
+        <p className={styles.sectionSubtitle}>Service record credentials.</p>
       </div>
 
       <div className={styles.timeline}>
         {experience.map((item) => (
           <div 
             key={item.id} 
-            className={`${styles.timelineNode} ${item.type === 'certification' ? styles.certNode : ''}`}
+            className={`
+              ${styles.timelineNode} 
+              ${item.type === 'certification' ? styles.certNode : ''} 
+              ${item.type === 'currentrole' ? styles.currNode : ''}
+            `}
           >
             <div className={styles.nodeMarker}></div>
             
@@ -32,4 +36,4 @@ const ManifestTimeline = () => {
   );
 };
 
-export default ManifestTimeline;
+export default ResumeTimeline;

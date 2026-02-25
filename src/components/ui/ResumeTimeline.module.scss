@@ -1,4 +1,4 @@
-.manifestSection {
+.resumeSection {
   max-width: 1000px;
   margin: 6rem auto;
   padding: 0 2rem;
@@ -112,7 +112,32 @@
     margin: 0;
   }
 
-  // --- CERT OVERRIDE ---
+  // --- Current Role ---
+  &.currNode {
+    .nodeMarker {
+      background-color: var(--color-console-charcoal);
+      border-color: var(--color-tos-olive);
+      box-shadow: 0 0 0 4px rgba(74, 93, 35, 0.2);
+      animation: signalPulse 3s infinite;
+    }
+
+    .nodeCard {
+      border-color: var(--color-tos-olive);
+      border-width: 3px;
+      background: linear-gradient(
+        to right, 
+        rgba(74, 93, 35, 0.05), 
+        transparent 20%
+      );
+    }
+
+    .organization {
+      color: var(--color-tos-olive);
+      text-shadow: 0 0 1px rgba(74, 93, 35, 0.3);
+    }
+  }
+
+  // --- Certs ---
   &.certNode {
     .nodeMarker {
       border-color: var(--color-communicator-gold);
@@ -133,4 +158,10 @@
       color: var(--color-communicator-gold);
     }
   }
+}
+
+@keyframes signalPulse {
+  0% { box-shadow: 0 0 0 0px rgba(74, 93, 35, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(74, 93, 35, 0); }
+  100% { box-shadow: 0 0 0 0px rgba(74, 93, 35, 0); }
 }

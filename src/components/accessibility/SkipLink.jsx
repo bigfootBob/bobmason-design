@@ -1,5 +1,4 @@
-import React from 'react';
-import './SkipLink.css'; // We will add simple CSS for this
+import './SkipLink.css';
 
 const SkipLink = () => {
   return (

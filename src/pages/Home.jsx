@@ -1,6 +1,6 @@
 import Hero from '../components/layout/Hero';
 import ProjectCard from '../components/ui/ProjectCard';
-import ManifestTimeline from '../components/ui/ManifestTimeline';
+import ResumeTimeline from '../components/ui/ResumeTimeline';
 import Comms from '../components/layout/Comms';
 import { projects } from '../data/projects';
 
@@ -28,11 +28,13 @@ const Home = () => {
           </div>
         </section>
 
-        <div id="manifest">
-          <ManifestTimeline />
+        <div id="resume">
+          <ResumeTimeline />
         </div>
 
-        <Comms />
+        <div id="comms">
+          <Comms />
+        </div>
 
       </main>
 

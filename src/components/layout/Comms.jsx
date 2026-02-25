@@ -1,4 +1,5 @@
 import styles from './Comms.module.scss';
+import { SOCIALS, SITE_METADATA } from '../../data/constants';
 
 const Comms = () => {
   return (
@@ -12,20 +13,20 @@ const Comms = () => {
 
         <div className={styles.message}>
           <p>
-            I am currently interested in opportunities in engineering and leadership <strong>2026</strong>. 
+            I am currently interested in opportunities as design technologist (UX / engineering) and engineering leadership <strong>Beginning March 2026</strong>. 
             If you need a Design Technologist to bridge the gap between your 
             product strategy and front-end reality, contact me.
           </p>
         </div>
 
         <div className={styles.actionGrid}>
-          <a href="mailto:bob.j.mason+portfolio@gmail.com" className={styles.transmitBtn}>
+          <a href={SOCIALS.EMAIL} className={styles.transmitBtn}>
             <span className={styles.btnIcon}>✉</span>
             <span>Transmit Data (Email)</span>
           </a>
 
           <a 
-            href="https://www.linkedin.com/in/robert-bob-mason/" 
+            href={SOCIALS.LINKEDIN} 
             target="_blank" 
             rel="noopener noreferrer" 
             className={styles.linkBtn}

@@ -1,15 +1,18 @@
 import styles from './Hero.module.scss';
 import profilePic from '../../assets/images/bobngracie-bw.jpg';
+import { SITE_METADATA } from '../../data/constants';
 
 const Hero = () => {
   return (
     <section className={styles.heroConsole}>
       <div className={styles.heroContent}>
         
-        {/* <div className={styles.kickerGroup}>
-          <span className={styles.statusIndicator}></span>
-          <span className={styles.kicker}>Front-End Developer & Strategist</span>
-        </div> */}
+      {/* <div className={styles.kickerGroup}>
+        {SITE_METADATA.AVAILABLE_FOR_WORK && (
+           <span className={styles.statusIndicator} title="Signal Active: Open to Work"></span>
+        )}
+        <span className={styles.kicker}>{SITE_METADATA.ROLE_TITLE}</span>
+      </div> */}
         
         <h2 className={styles.heroHeadline}>
           UX + Dev + Agentic AI + PO 
@@ -17,11 +20,6 @@ const Hero = () => {
         <h1 className={styles.humanBreak}>
           All in one human.
         </h1>
-        
-        {/* <div className={styles.heroActions}>
-          <span className={styles.retroBadge}>CSPO Certified</span>
-          <a href="#projects" className={styles.btnPrimary}>Access Databanks</a>
-        </div> */}
 
       </div>
 

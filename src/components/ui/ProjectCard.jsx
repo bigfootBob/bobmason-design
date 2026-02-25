@@ -1,29 +1,22 @@
 import styles from './ProjectCard.module.scss';
 
 const ProjectCard = ({ project }) => {
-  // Destructure 'preview' from your project data
   const { title, category, description, link, repo, preview, isDarkMode } = project;
 
   return (
     <article className={styles.retroCard}>
-      {/* We add a modifier class 'hasSchematic' if a preview exists.
-         This allows us to remove padding in the CSS so the image fits perfectly.
-      */}
       <div className={`${styles.cardVisual} ${preview ? styles.hasSchematic : ''}`}>
         
         {preview ? (
-          // --- OPTION A: THE SCHEMATIC IMAGE ---
           <img 
             src={`/assets/images/${preview}`} 
             alt={`Schematic design for ${title}`} 
             className={styles.schematicImg}
             onError={(e) => {
-              // Safety Net: If the image fails to load, hide it and reveal a fallback
               e.target.style.display = 'none'; 
             }}
           />
         ) : (
-          // --- OPTION B: THE WIREFRAME FALLBACK ---
           <div className={`${styles.wireframePlaceholder} ${isDarkMode ? styles.darkMode : ''}`}>
             {title}
           </div>
@@ -38,13 +31,13 @@ const ProjectCard = ({ project }) => {
         
         <div className={styles.cardActions}>
           {link && (
-            <a href={link} className={styles.btnPrimary} target="_blank" rel="noopener noreferrer">
+            <a href={link} className={styles.btnSecondary} target="_blank" rel="noopener noreferrer">
               Review Docs &rarr;
             </a>
           )}
           {repo && (
             <a href={repo} className={styles.btnSecondary} target="_blank" rel="noopener noreferrer">
-              Source Code
+              Source Code &rarr;
             </a>
           )}
         </div>
