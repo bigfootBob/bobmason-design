@@ -11,9 +11,11 @@ const Hero = () => {
           <span className={styles.kicker}>Front-End Developer & Strategist</span>
         </div> */}
         
-        <h1 className={styles.heroHeadline}>
+        <h2 className={styles.heroHeadline}>
           UX + Dev + Agentic AI + PO 
-          <span className={styles.humanBreak}>All in one human.</span>
+        </h2>
+        <h1 className={styles.humanBreak}>
+          All in one human.
         </h1>
         
         {/* <div className={styles.heroActions}>

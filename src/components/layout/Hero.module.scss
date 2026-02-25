@@ -20,7 +20,7 @@
   letter-spacing: 1px;
 }
 
-h1 {
+h1, h2 {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   line-height: 1.1;
   font-weight: 800;
@@ -31,11 +31,15 @@ h1 {
     color: #a0a0a0;
   }
  
-  .humanBreak {
+  &.heroHeadline {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  &.humanBreak {
     display: block;
-    color: var(--color-tos-olive); 
-    font-size: 0.85em; // If you want it slightly subordinated
-    // margin-top: 0.25rem; 
+    color: var(--color-tos-olive);
   }
 }
 
@@ -100,7 +104,7 @@ h1 {
 .portraitFrame {
   position: relative; 
   width: 100%;
-  max-width: 500px; 
+  max-width: 400px; 
   aspect-ratio: 1.4 / 1; 
   margin: 3rem auto 0; 
   border-radius: 600px; 

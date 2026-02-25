@@ -36,7 +36,7 @@ export const projects = [
     description: 'Designed and deployed a high-conversion, satirical platform focusing on accessibility and sharp, brutalist UX.',
     link: 'https://www.stolenbikeclosure.com',
     repo: 'https://github.com/bigfootBob/Baku',
-    preview: '',
+    preview: 'portfolio-preview-baku.webp',
     isDarkMode: true,
   },
   {
@@ -48,5 +48,16 @@ export const projects = [
     repo: 'https://github.com/bigfootBob/sarah-walker-cloud',
     preview: 'portfolio-preview-sarah.webp',
     isDarkMode: false,
+  },
+  {
+    id: 'p6',
+    title: 'Additional Work',
+    category: 'Creative / Web / Other',
+    description: 'Architected comprehensive business dashboards translating complex operational data into actionable product insights.',
+    link: '#',
+    repo: '',
+    preview: 'portfolio-preview-other.webp',
+    isDarkMode: false,
   }
 ];
+
