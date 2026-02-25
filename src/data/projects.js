@@ -34,7 +34,7 @@ export const projects = [
     title: 'Baku Worry Eater',
     category: 'Creative / Mobile / Product',
     description: 'Designed and deployed a high-conversion, satirical platform focusing on accessibility and sharp, brutalist UX.',
-    link: 'https://www.stolenbikeclosure.com',
+    link: 'https://silvanian.art/',
     repo: 'https://github.com/bigfootBob/Baku',
     preview: 'portfolio-preview-baku.webp',
     isDarkMode: false,
