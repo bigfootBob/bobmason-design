@@ -35,6 +35,7 @@ const Footer = () => {
             <span className={styles.columnHeader}>Navigation</span>
             <a href="#projects" className={styles.link}>Projects</a>
             <a href="#resume" className={styles.link}>Resume</a>
+            <a href="lab" className={styles.link}>Lab</a>
           </div>
         </div>
 
