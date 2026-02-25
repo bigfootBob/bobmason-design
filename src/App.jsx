@@ -4,9 +4,11 @@ import { SITE_METADATA } from './data/constants';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import SkipLink from './components/accessibility/SkipLink';
+import ScrollToAnchor from './components/utils/ScrollToAnchor';
 
 import Home from './pages/Home';
 import Lab from './pages/Lab';
+import NotFound from './pages/NotFound';
 
 import './App.scss';
 
@@ -18,16 +20,18 @@ function App() {
   return (
     <Router>
       <div className="app-wrapper">
-        <SkipLink />
         
+        <ScrollToAnchor />
+
+        <SkipLink />
+
         <Header />
 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/lab" element={<Lab />} />
- 
-          {/* Fallback 404 Route */}
-          <Route path="*" element={<div style={{ padding: '10rem', textAlign: 'center', color: 'white' }}>404 - Lost in the woods</div>} />
+          {/* Fallback Route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <Footer />

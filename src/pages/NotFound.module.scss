@@ -1,0 +1,70 @@
+.errorTerminal {
+  min-height: 70vh; // Take up most of the screen
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: transparent; // Lets your global app background show through
+}
+
+.content {
+  max-width: 600px;
+  border: 2px dashed var(--color-console-charcoal); // Retro "dashed" border
+  padding: 3rem;
+  background-color: rgba(255, 255, 255, 0.05); // Subtle glass effect
+  border-radius: var(--border-radius-sharp);
+}
+
+.errorCode {
+  font-family: var(--font-heading);
+  font-size: clamp(6rem, 15vw, 10rem); // Massive responsive text
+  font-weight: 900;
+  margin: 0;
+  line-height: 1;
+  color: var(--color-console-charcoal);
+  opacity: 0.2; // Faded background effect
+  
+  // Optional: A retro text shadow
+  text-shadow: 4px 4px 0 var(--color-tos-olive);
+}
+
+.messageBox {
+  margin-top: -2rem; // Pulls the text up to overlap the big 404 slightly
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-communicator-gold);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-console-charcoal);
+  margin-bottom: 2.5rem;
+}
+
+.btnReturn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--color-tos-olive);
+  color: var(--color-starfleet-cream);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: var(--border-radius-pill);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--color-console-charcoal);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+}
