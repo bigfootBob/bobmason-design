@@ -55,6 +55,63 @@
     }
   }
 }
+// ... keep your existing .commsConsole, .container, and .brand styles here ...
+
+// --- MOBILE TOGGLE (Hamburger) ---
+.mobileToggle {
+  display: none; // Hidden on desktop
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 101; 
+  
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.hamburger {
+  position: relative;
+  width: 24px;
+  height: 3px;
+  background: var(--color-console-charcoal);
+  transition: all 0.3s ease-in-out;
+  border-radius: 2px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    background: var(--color-console-charcoal);
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+    left: 0;
+  }
+
+  &::before { top: -8px; }
+  &::after { top: 8px; }
+}
+
+// Animate to an "X" when open
+.mobileToggle.open .hamburger {
+  background: transparent; // Hides the middle line
+
+  &::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  &::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+}
 
 // --- NAV ---
 .navigation {
@@ -117,6 +174,41 @@
       background-color: var(--color-tos-olive);
       border-color: var(--color-tos-olive);
       color: var(--color-starfleet-cream);
+    }
+  }
+
+  // Mobile stuffz
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(244, 241, 234, 0.98); 
+    backdrop-filter: blur(8px);
+    border-bottom: 4px solid var(--color-console-charcoal);
+    padding: 2rem 0;
+    
+    // Hidden state
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+    
+    // Active state
+    &.isOpen {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .navList {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .navLink {
+      font-size: 1.25rem;
     }
   }
 }
