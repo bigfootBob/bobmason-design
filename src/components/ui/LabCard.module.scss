@@ -1,0 +1,114 @@
+// --- LAB CARD CONTAINER ---
+.labCard {
+  background-color: var(--color-starfleet-cream, #f4f1ea);
+  border: 1px solid rgba(15, 11, 8, 0.1); 
+  border-radius: var(--border-radius-sharp, 4px);
+  
+  // CRITICAL: Prevents a single card from splitting across two columns in Masonry
+  break-inside: avoid;
+  margin-bottom: 2rem;
+  
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  overflow: hidden;
+
+  // The Interaction: Slight rotation and lift
+  &:hover {
+    transform: translateY(-5px) rotate(1deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-communicator-gold);
+  }
+}
+
+// --- THE MOUNTING PLAQUE HEADER ---
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e5e0d3; // The museum matte color
+  border-bottom: 2px solid var(--color-console-charcoal); // The sharp divider line
+  padding: 0.75rem 1.5rem;
+  min-height: 3rem;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+// The tiny physical thumbnail
+.thumbnailFrame {
+  width: 48px;
+  height: 48px;
+  background-color: #ffffff;
+  border: 1px solid var(--color-console-charcoal);
+  padding: 3px; // Creates a "polaroid" white border
+  box-shadow: 2px 2px 0 rgba(15, 11, 8, 0.15);
+  transform: rotate(-2deg); // Looks physically placed
+  flex-shrink: 0;
+}
+
+.thumbnailImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
+.categoryTag {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  color: var(--color-console-charcoal); // Swapped to charcoal for contrast against beige
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+// --- CARD CONTENT ---
+.cardContent {
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-console-charcoal);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.cardDesc {
+  font-size: 1rem;
+  color: var(--color-console-charcoal);
+  opacity: 0.8;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+// --- TAGS ---
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.tag {
+  font-size: 0.75rem;
+  background-color: rgba(15, 11, 8, 0.05);
+  color: var(--color-console-charcoal);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.cardActions {
+  margin-top: 1rem;
+}

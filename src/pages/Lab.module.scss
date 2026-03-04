@@ -1,41 +1,49 @@
 .labPage {
-  padding: 4rem 0 8rem 0;
+  padding: 4rem 2rem;
   min-height: 80vh;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
 }
 
-// --- HEADER ---
+// --- THE CENTERED HEADER ---
 .labHeader {
-  margin-bottom: 4rem;
-  border-bottom: 2px dashed var(--color-console-charcoal);
-  padding-bottom: 2rem;
-  max-width: 800px;
+  text-align: center; 
+  max-width: 800px;   
+  margin: 0 auto 4rem auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
 
-  .title {
-    font-family: var(--font-heading);
-    font-size: clamp(3rem, 8vw, 5rem);
-    color: var(--color-console-charcoal);
-    margin-bottom: 1rem;
-    line-height: 1;
-    text-transform: uppercase;
-  }
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 5rem);
+  text-transform: uppercase;
+  color: var(--color-console-charcoal);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
 
-  .subtitle {
-    font-size: 1.25rem;
-    color: var(--color-console-charcoal);
-    opacity: 0.8;
-    line-height: 1.6;
-  }
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--color-console-charcoal);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.divider {
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-communicator-gold);
+  border-radius: 2px;
 }
 
 // --- MASONRY GRID ---
 .masonryGrid {
-  // CSS Multi-column layout handles the masonry staggering automatically!
   column-count: 1;
   column-gap: 2rem;
 
@@ -46,95 +54,4 @@
   @media (min-width: 1024px) {
     column-count: 3;
   }
-}
-
-// --- LAB CARD (The Artifact) ---
-.labCard {
-  background-color: rgba(255, 255, 255, 0.4); // Very subtle glass effect
-  border: 1px solid rgba(15, 11, 8, 0.1); // Faint charcoal border
-  border-radius: var(--border-radius-sharp);
-  
-  // CRITICAL: Prevents a single card from splitting across two columns
-  break-inside: avoid;
-  margin-bottom: 2rem;
-  
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-  overflow: hidden;
-
-  // The Interaction: Slight rotation and lift, like picking up a physical photograph
-  &:hover {
-    transform: translateY(-5px) rotate(1deg);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.8);
-    border-color: var(--color-communicator-gold);
-  }
-}
-
-// The "Museum Matte" Frame (Reusing your excellent #e5e0d3 aesthetic)
-.cardVisual {
-  background-color: #e5e0d3;
-  padding: 10px;
-  border-bottom: 2px solid var(--color-console-charcoal);
-}
-
-.cardImg {
-  width: 100%;
-  height: auto; // Let it scale naturally based on the image aspect ratio
-  display: block; // Removes tiny gap below images
-  mix-blend-mode: multiply; // Blends the image with the paper background
-  opacity: 0.95;
-}
-
-// --- CARD CONTENT ---
-.cardContent {
-  padding: 1.5rem;
-}
-
-.categoryTag {
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
-  color: var(--color-communicator-gold);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.cardTitle {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--color-console-charcoal);
-  margin-bottom: 0.75rem;
-  line-height: 1.2;
-}
-
-.cardDesc {
-  font-size: 1rem;
-  color: var(--color-console-charcoal);
-  opacity: 0.8;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-}
-
-// --- TAGS ---
-.tagList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.5rem 0;
-}
-
-.tag {
-  font-size: 0.75rem;
-  background-color: rgba(15, 11, 8, 0.05); // Very faint charcoal background
-  color: var(--color-console-charcoal);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-}
-
-.cardActions {
-  margin-top: 1rem;
 }
