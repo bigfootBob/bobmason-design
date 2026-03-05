@@ -8,7 +8,7 @@ import { projects } from '../data/projects';
 const Home = () => {
   return (
     <>
-      <main id="main-content" className={styles.homePage}>
+      <main id="main-content" className='homePage'>
 
         <Hero />
 
