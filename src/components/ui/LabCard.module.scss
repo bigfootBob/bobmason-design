@@ -12,27 +12,27 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     border-color: var(--color-communicator-gold);
   }
-}
 
-.cardHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #e5e0d3; 
-  border-bottom: 2px solid var(--color-console-charcoal); 
-  padding: 0.75rem 1.5rem;
-  min-height: 3rem;
-}
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e5e0d3; 
+    border-bottom: 2px solid var(--color-console-charcoal); 
+    padding: 0.75rem 1.5rem;
+    min-height: 3rem;
 
-.headerLeft {
-  display: flex;
-  align-items: center;
-}
+    .headerLeft {
+      display: flex;
+      align-items: center;
+    }
 
-.headerRight {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+    .headerRight {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
 }
 
 .thumbnailFrame {
@@ -65,53 +65,46 @@
   letter-spacing: 1px;
 }
 
-/* --- Card Content --- */
 .cardContent {
   padding: 1.5rem;
+
+  .cardTitle {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-console-charcoal);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .cardDesc {
+    font-size: 1rem;
+    color: var(--color-console-charcoal);
+    opacity: 0.8;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .tagList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+
+    .tag {
+      font-size: 0.75rem;
+      background-color: rgba(15, 11, 8, 0.05);
+      color: var(--color-console-charcoal);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+  }
+
+  .cardActions {
+    margin-top: 1rem;
+  }
 }
-
-.cardTitle {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--color-console-charcoal);
-  margin-bottom: 0.75rem;
-  line-height: 1.2;
-}
-
-.cardDesc {
-  font-size: 1rem;
-  color: var(--color-console-charcoal);
-  opacity: 0.8;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-}
-
-/* --- Tags --- */
-.tagList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.5rem 0;
-}
-
-.tag {
-  font-size: 0.75rem;
-  background-color: rgba(15, 11, 8, 0.05);
-  color: var(--color-console-charcoal);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-}
-
-.cardActions {
-  margin-top: 1rem;
-}
-
-
-/* ==========================================================================
-   2. MODAL & GALLERY CAROUSEL
-   ========================================================================== */
 
 .modalOverlay {
   position: fixed;
@@ -127,48 +120,52 @@
   justify-content: center;
   padding: 2rem;
   animation: fadeIn 0.2s ease-out;
-}
 
-.modalContent {
-  position: relative;
-  max-width: 90vw;
-  max-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .modalContent {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-.modalImage {
-  max-width: 100%;
-  max-height: 85vh; 
-  object-fit: contain; 
-  border: 8px solid var(--color-console-charcoal);
-  border-radius: var(--border-radius-sharp, 4px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  background-color: var(--color-starfleet-cream); 
-}
+    .closeModalBtn {
+      position: absolute;
+      top: -2.5rem;
+      left: 50%;                  
+      transform: translateX(-50%);
+      
+      background: transparent;
+      border: none;
+      color: var(--color-starfleet-cream);
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      cursor: pointer;
+      transition: color 0.2s;
 
-.closeModalBtn {
-  position: absolute;
-  top: -2.5rem;
-  right: 0;
-  background: transparent;
-  border: none;
-  color: var(--color-starfleet-cream);
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  cursor: pointer;
-  transition: color 0.2s;
+      &:hover {
+        color: var(--color-communicator-gold);
+      }
+    }
 
-  &:hover {
-    color: var(--color-communicator-gold);
+    .modalImage {
+      max-width: 100%;
+      max-height: 85vh; 
+      object-fit: contain; 
+      
+      background-color: #ffffff; 
+      padding: 3px;
+      border: 2px solid var(--color-console-charcoal);
+      border-radius: 2px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    }
   }
 }
 
-/* --- Carousel Navigation --- */
+/* --- Carousel Nav --- */
 .galleryNav {
   position: absolute;
   top: 50%;
@@ -216,11 +213,6 @@
   border-radius: var(--border-radius-pill, 20px);
 }
 
-
-/* ==========================================================================
-   3. ANIMATIONS
-   ========================================================================== */
-
 .wigglePop {
   animation: wigglePopAnim 0.5s ease-in-out;
   z-index: 20;
@@ -241,13 +233,12 @@
 }
 
 
-/* ==========================================================================
-   4. MOBILE OVERRIDES
-   ========================================================================== */
+/* =============================
+   MOBILE OVERRIDES
+   ============================= */
 
 @media (max-width: 768px) {
   
-  /* Modal Framework */
   .modalOverlay {
     padding: 1rem; 
   }
@@ -259,14 +250,17 @@
 
   .modalImage {
     max-height: 75vh; 
-    border-width: 4px; 
+    border-width: 2px; 
+    padding: 2px;
   }
 
-  /* Pinned Close Button */
   .closeModalBtn {
     position: fixed;
     top: 1rem;
     right: 1rem;
+    left: auto;
+    transform: none; 
+    
     background-color: rgba(15, 11, 8, 0.9); 
     color: var(--color-starfleet-cream);
     padding: 0.5rem 1rem;
@@ -276,7 +270,6 @@
     z-index: 10000;
   }
 
-  /* Carousel Navigation */
   .navLeft {
     left: 0.5rem; 
   }
@@ -293,10 +286,6 @@
   }
 }
 
-/* ==========================================================================
-   5. SLIDE-UP EASTER EGG OVERLAY
-   ========================================================================== */
-
 .easterEggOverlay {
   position: fixed;
   top: 0;
@@ -306,21 +295,17 @@
   background-color: rgba(15, 11, 8, 0.7); 
   backdrop-filter: blur(4px);
   z-index: 9999;
-  // We remove flexbox here so we can absolutely position the children
   animation: fadeIn 0.3s ease-out;
 }
 
 .phoneSlider {
   position: absolute;
-  bottom: 0; // Mechanically locks the bottom of the image to the bottom of the screen
+  bottom: 0; 
   left: 50%;
   width: 100%;
   max-width: 500px; 
-  
-  // Start the element hidden completely below the screen (100% of its own height)
   transform: translateX(-50%) translateY(100%);
   
-  // Slower, dramatic 1.2s slide up
   animation: slideUpPhoneAnim 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -378,11 +363,9 @@
 
 @keyframes slideUpPhoneAnim {
   0% {
-    // Hidden below the viewport
     transform: translateX(-50%) translateY(100%);
   }
   100% {
-    // Rises up and stops exactly at bottom: 0
     transform: translateX(-50%) translateY(0);
   }
 }

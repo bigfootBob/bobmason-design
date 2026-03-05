@@ -41,7 +41,6 @@ const Button = ({
         {...props}
       >
         {content}
-        {/* Optional: Add a tiny external link arrow here if you want */}
       </a>
     );
   }

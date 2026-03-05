@@ -55,11 +55,10 @@
     }
   }
 }
-// ... keep your existing .commsConsole, .container, and .brand styles here ...
 
-// --- MOBILE TOGGLE (Hamburger) ---
+// --- mobile ---
 .mobileToggle {
-  display: none; // Hidden on desktop
+  display: none;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -99,9 +98,8 @@
   &::after { top: 8px; }
 }
 
-// Animate to an "X" when open
 .mobileToggle.open .hamburger {
-  background: transparent; // Hides the middle line
+  background: transparent;
 
   &::before {
     transform: rotate(45deg);
@@ -113,7 +111,6 @@
   }
 }
 
-// --- NAV ---
 .navigation {
   .navList {
     display: flex;
@@ -177,7 +174,6 @@
     }
   }
 
-  // Mobile stuffz
   @media (max-width: 768px) {
     position: absolute;
     top: 100%;
@@ -188,13 +184,11 @@
     border-bottom: 4px solid var(--color-console-charcoal);
     padding: 2rem 0;
     
-    // Hidden state
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease-in-out;
     
-    // Active state
     &.isOpen {
       opacity: 1;
       visibility: visible;

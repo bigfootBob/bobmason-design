@@ -44,9 +44,7 @@ const LabCard = ({ item }) => {
 
   const handleSendLove = () => {
     setIsEasterEggOpen(false);
-    // Jump to the home page's comms section
     navigate('/#comms');
-    // Force the browser to scroll to the hash
     setTimeout(() => {
       const commsSection = document.getElementById('comms');
       if (commsSection) commsSection.scrollIntoView({ behavior: 'smooth' });
@@ -117,11 +115,9 @@ const LabCard = ({ item }) => {
           ))}
         </ul>
 
-
         {(item.link || hasGallery || item.customAction) && (
           <div className={styles.cardActions}>
             {item.modal || item.customAction ? (
-              // Changed this to use our new handleActionClick logic
               <Button onClick={handleActionClick} variant="design" type="button">
                 Inspect Artifact &rarr;
               </Button>
@@ -132,9 +128,6 @@ const LabCard = ({ item }) => {
             )}
           </div>
         )}
-
-
-
       </div>
     </article>
 
@@ -191,7 +184,6 @@ const LabCard = ({ item }) => {
               className={styles.phoneImage}
             />
             
-            {/* The absolute positioned button over the white space */}
             <button className={styles.sendLoveBtn} onClick={handleSendLove}>
               Send Love
             </button>

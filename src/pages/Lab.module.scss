@@ -1,57 +1,55 @@
 .labPage {
   padding: 4rem 2rem;
   min-height: 80vh;
-}
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
 
-// --- THE CENTERED HEADER ---
-.labHeader {
-  text-align: center; 
-  max-width: 800px;   
-  margin: 0 auto 4rem auto; 
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-}
+    .labHeader {
+      text-align: center; 
+      max-width: 800px;   
+      margin: 0 auto 4rem auto; 
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
 
-.title {
-  font-family: var(--font-heading);
-  font-size: clamp(3rem, 8vw, 5rem);
-  text-transform: uppercase;
-  color: var(--color-console-charcoal);
-  line-height: 1.1;
-  margin-bottom: 1rem;
-}
+      .title {
+        font-family: var(--font-heading);
+        font-size: clamp(3rem, 8vw, 5rem);
+        text-transform: uppercase;
+        color: var(--color-console-charcoal);
+        line-height: 1.1;
+        margin-bottom: 1rem;
+      }
 
-.subtitle {
-  font-size: 1.2rem;
-  color: var(--color-console-charcoal);
-  opacity: 0.8;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
+      .subtitle {
+        font-size: 1.2rem;
+        color: var(--color-console-charcoal);
+        opacity: 0.8;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
 
-.divider {
-  width: 60px;
-  height: 4px;
-  background-color: var(--color-communicator-gold);
-  border-radius: 2px;
-}
+      .divider {
+        width: 60px;
+        height: 4px;
+        background-color: var(--color-communicator-gold);
+        border-radius: 2px;
+      }
+    }
 
-// --- MASONRY GRID ---
-.masonryGrid {
-  column-count: 1;
-  column-gap: 2rem;
+    .masonryGrid {
+      column-count: 1;
+      column-gap: 2rem;
 
-  @media (min-width: 768px) {
-    column-count: 2;
-  }
+      @media (min-width: 768px) {
+        column-count: 2;
+      }
 
-  @media (min-width: 1024px) {
-    column-count: 3;
+      @media (min-width: 1024px) {
+        column-count: 3;
+      }
+    }
   }
 }

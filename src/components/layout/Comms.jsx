@@ -1,5 +1,5 @@
 import styles from './Comms.module.scss';
-import { SOCIALS, SITE_METADATA } from '../../data/constants';
+import { SOCIALS } from '../../data/constants';
 
 const Comms = () => {
   return (
