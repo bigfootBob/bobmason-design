@@ -292,3 +292,97 @@
     background-color: rgba(15, 11, 8, 0.8); 
   }
 }
+
+/* ==========================================================================
+   5. SLIDE-UP EASTER EGG OVERLAY
+   ========================================================================== */
+
+.easterEggOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 11, 8, 0.7); 
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  // We remove flexbox here so we can absolutely position the children
+  animation: fadeIn 0.3s ease-out;
+}
+
+.phoneSlider {
+  position: absolute;
+  bottom: 0; // Mechanically locks the bottom of the image to the bottom of the screen
+  left: 50%;
+  width: 100%;
+  max-width: 500px; 
+  
+  // Start the element hidden completely below the screen (100% of its own height)
+  transform: translateX(-50%) translateY(100%);
+  
+  // Slower, dramatic 1.2s slide up
+  animation: slideUpPhoneAnim 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.phoneImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sendLoveBtn {
+  position: absolute;
+  bottom: 27%;
+  left: 36%;
+  width: 34%;
+  transform: translateX(-50%);
+
+  background-color: #00d075; 
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 1rem 0;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 208, 117, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    background-color: #00b365;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+.closePhoneBtn {
+  position: fixed;
+  top: 9.5%;
+  left: 28%;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 10000;
+  
+  &:hover {
+    background: white;
+    color: black;
+  }
+}
+
+@keyframes slideUpPhoneAnim {
+  0% {
+    // Hidden below the viewport
+    transform: translateX(-50%) translateY(100%);
+  }
+  100% {
+    // Rises up and stops exactly at bottom: 0
+    transform: translateX(-50%) translateY(0);
+  }
+}

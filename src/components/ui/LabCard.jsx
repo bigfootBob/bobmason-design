@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import styles from './LabCard.module.scss';
 import Button from './Button'; 
 
@@ -7,7 +8,8 @@ const LabCard = ({ item }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const hasGallery = item.gallery && item.gallery.length > 0;
-
+  const [isEasterEggOpen, setIsEasterEggOpen] = useState(false);
+  const navigate = useNavigate();
   // Gallery Nav
   const nextImage = (e) => {
     if (e) e.stopPropagation();
@@ -32,6 +34,25 @@ const LabCard = ({ item }) => {
     }
   };
 
+  const handleActionClick = () => {
+    if (item.customAction === 'slideUpPhone') {
+      setIsEasterEggOpen(true);
+    } else {
+      setIsModalOpen(true);
+    }
+  };
+
+  const handleSendLove = () => {
+    setIsEasterEggOpen(false);
+    // Jump to the home page's comms section
+    navigate('/#comms');
+    // Force the browser to scroll to the hash
+    setTimeout(() => {
+      const commsSection = document.getElementById('comms');
+      if (commsSection) commsSection.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (!isModalOpen) return;
@@ -43,9 +64,9 @@ const LabCard = ({ item }) => {
       }
     };
 
-    if (isModalOpen) {
+    if (isModalOpen || isEasterEggOpen) {
       document.body.style.overflow = 'hidden';
-      setCurrentImageIndex(0); 
+      if (isModalOpen) setCurrentImageIndex(0); 
       window.addEventListener('keydown', handleKeyDown);
     } else {
       document.body.style.overflow = 'unset';
@@ -55,7 +76,7 @@ const LabCard = ({ item }) => {
       document.body.style.overflow = 'unset';
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isModalOpen, hasGallery]);
+  }, [isModalOpen, isEasterEggOpen, hasGallery]);
 
   return (
     <>
@@ -96,10 +117,12 @@ const LabCard = ({ item }) => {
           ))}
         </ul>
 
-        {(item.link || hasGallery) && (
+
+        {(item.link || hasGallery || item.customAction) && (
           <div className={styles.cardActions}>
-            {item.modal ? (
-              <Button onClick={() => setIsModalOpen(true)} variant="design" type="button">
+            {item.modal || item.customAction ? (
+              // Changed this to use our new handleActionClick logic
+              <Button onClick={handleActionClick} variant="design" type="button">
                 Inspect Artifact &rarr;
               </Button>
             ) : (
@@ -109,6 +132,9 @@ const LabCard = ({ item }) => {
             )}
           </div>
         )}
+
+
+
       </div>
     </article>
 
@@ -153,6 +179,29 @@ const LabCard = ({ item }) => {
           )}
         </div>
       </div>
+      )}
+
+      {isEasterEggOpen && item.customAction === 'slideUpPhone' && (
+        <div className={styles.easterEggOverlay} onClick={() => setIsEasterEggOpen(false)}>
+          
+          <div className={styles.phoneSlider} onClick={(e) => e.stopPropagation()}>
+            <img 
+              src={`/assets/images/${item.slideImage}`} 
+              alt="Hand holding phone with Odd Bob" 
+              className={styles.phoneImage}
+            />
+            
+            {/* The absolute positioned button over the white space */}
+            <button className={styles.sendLoveBtn} onClick={handleSendLove}>
+              Send Love
+            </button>
+            
+            <button className={styles.closePhoneBtn} onClick={() => setIsEasterEggOpen(false)}>
+              Close
+            </button>
+          </div>
+
+        </div>
       )}
     </>
   );

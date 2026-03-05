@@ -1,13 +1,14 @@
 import Hero from '../components/layout/Hero';
 import ProjectCard from '../components/ui/ProjectCard';
 import ResumeTimeline from '../components/ui/ResumeTimeline';
+import Testimonials from '../components/layout/Testimonials';
 import Comms from '../components/layout/Comms';
 import { projects } from '../data/projects';
 
 const Home = () => {
   return (
     <>
-      <main>
+      <main id="main-content" className={styles.homePage}>
 
         <Hero />
 
@@ -30,6 +31,10 @@ const Home = () => {
 
         <div id="resume">
           <ResumeTimeline />
+        </div>
+
+        <div id="testimonials">
+          <Testimonials />
         </div>
 
         <div id="comms">

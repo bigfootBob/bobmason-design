@@ -10,7 +10,7 @@ const Lab = () => {
   }, []);
 
   return (
-    <main className={styles.labPage}>
+    <main id="main-content" className={styles.labPage}>
       <div className={styles.container}>
         
         <header className={styles.labHeader}>

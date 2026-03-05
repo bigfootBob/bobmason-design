@@ -46,12 +46,13 @@ export const labExperiments = [
   },
   {
     id: 'web-4',
-    category: 'Web Development / UX',
+    category: 'Micro-Interaction / UX',
     title: 'End-User Sentiment Prototype',
     description: 'A high-fidelity mobile prototype exploring aggressive user-retention strategies and canine-based emotional conversion funnels. Click to test the primary CTA.',
-    image: 'lab/preview_likebob.png', // do a thing
-    link: 'mailto:bob.j.mason+likebob@gmail.com?subject=Sending%20Love!', 
-    tags: ['UX Psychology', 'Mobile Design', 'Web Development'],
+    image: 'lab/preview_likebob.png',
+    customAction: 'slideUpPhone',
+    slideImage: 'likebob.png',
+    tags: ['UX Psychology', 'Mobile Design', 'Easter Egg'],
     modal: false
   },
   // Art
