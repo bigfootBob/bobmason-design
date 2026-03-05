@@ -1,9 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './LabCard.module.scss';
 import Button from './Button'; 
 
 const LabCard = ({ item }) => {
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const hasGallery = item.gallery && item.gallery.length > 0;
+
+  // Gallery Nav
+  const nextImage = (e) => {
+    if (e) e.stopPropagation();
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === item.gallery.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImage = (e) => {
+    if (e) e.stopPropagation();
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? item.gallery.length - 1 : prevIndex - 1
+    );
+  };
 
   const handleThumbnailClick = () => {
     if (!isAnimating) {
@@ -14,7 +32,33 @@ const LabCard = ({ item }) => {
     }
   };
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!isModalOpen) return;
+      if (e.key === 'Escape') setIsModalOpen(false);
+
+      if (hasGallery) {
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+      }
+    };
+
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+      setCurrentImageIndex(0); 
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isModalOpen, hasGallery]);
+
   return (
+    <>
     <article className={styles.labCard}>
       
       <header className={styles.cardHeader}>
@@ -52,16 +96,65 @@ const LabCard = ({ item }) => {
           ))}
         </ul>
 
-        {item.link && (
+        {(item.link || hasGallery) && (
           <div className={styles.cardActions}>
-            <Button href={item.link} variant="design">
-              Inspect Artifact &rarr;
-            </Button>
+            {item.modal ? (
+              <Button onClick={() => setIsModalOpen(true)} variant="design" type="button">
+                Inspect Artifact &rarr;
+              </Button>
+            ) : (
+              <Button href={item.link} variant="design">
+                Inspect Artifact &rarr;
+              </Button>
+            )}
           </div>
         )}
       </div>
-
     </article>
+
+    {isModalOpen && item.modal && (
+      <div 
+        className={styles.modalOverlay} 
+        onClick={() => setIsModalOpen(false)}
+        role="dialog"
+        aria-modal="true"
+      >
+        <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+          <button 
+            className={styles.closeModalBtn} 
+            onClick={() => setIsModalOpen(false)}
+            aria-label="Close modal"
+          >
+            &times; Close
+          </button>
+
+          {hasGallery && item.gallery.length > 1 && (
+            <button className={`${styles.galleryNav} ${styles.navLeft}`} onClick={prevImage} aria-label="Previous image">
+              &#10094;
+            </button>
+          )}
+
+          <img 
+            src={hasGallery ? item.gallery[currentImageIndex] : item.link} 
+            alt={`Full view of ${item.title}`} 
+            className={styles.modalImage} 
+          />
+
+          {hasGallery && item.gallery.length > 1 && (
+            <button className={`${styles.galleryNav} ${styles.navRight}`} onClick={nextImage} aria-label="Next image">
+              &#10095;
+            </button>
+          )}
+
+          {hasGallery && item.gallery.length > 1 && (
+            <div className={styles.galleryCounter}>
+              {currentImageIndex + 1} / {item.gallery.length}
+            </div>
+          )}
+        </div>
+      </div>
+      )}
+    </>
   );
 };
 
