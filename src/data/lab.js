@@ -3,13 +3,13 @@ export const labExperiments = [
   // -----------------------------
   {
     id: 'web-1',
-    category: 'Web Design / Support',
+    category: 'Enterprise UX / Product Design',
     title: 'Norton Support Interfaces',
     description: 'A collection of UX explorations and interface designs for the Gen/Norton Support ecosystem.',
     image: 'lab/preview_web_norton.png',
     link: null,
     modal: true,
-    tags: ['UI/UX', 'Support Flows', 'Mobile Design', 'Web Development'],
+    tags: ['Customer Experience (CX)', 'Product Strategy', 'Support Flows', 'Mobile Design', 'Web Development'],
     gallery: [
       '/assets/lab/web/nortonsupp/home.png',
       '/assets/lab/web/nortonsupp/newsp.jpg',
@@ -30,16 +30,15 @@ export const labExperiments = [
   },
   {
     id: 'web-3',
-    category: 'Web Development / UX',
-    title: 'Web Development Prototypes',
-    description: 'A high-fidelity mobile prototype exploring aggressive user-retention strategies and canine-based emotional conversion funnels. Click to test the primary CTA.',
+    category: 'Enterprise UX / Architecture',
+    title: 'Support & Remediation Flows',
+    description: 'A comprehensive suite of enterprise UX wireframes focusing on customer support and threat remediation. Includes user flows for dark web breach alerts, faceted knowledge base search, and automated diagnostic tools designed to reduce friction and empower user self-service.',
     image: 'lab/preview_prototypes.png',
     link: null, 
     modal: true,
-    tags: ['Dashboard UI', 'UX Psychology', 'Cybersecurity UX', 'Mobile Design', 'Web Development'],
+    tags: ['Wireframing', 'Self-Service UX', 'Information Architecture', 'Support Flows'],
     gallery: [
       '/assets/lab/prototypes/dwm.png',
-      //'/assets/lab/prototypes/kbupdates.png',
       '/assets/lab/prototypes/autofix.png',
       '/assets/lab/prototypes/kbview.png'
     ]
@@ -52,7 +51,7 @@ export const labExperiments = [
     image: 'lab/preview_likebob.png',
     customAction: 'slideUpPhone',
     slideImage: 'likebob.png',
-    tags: ['UX Psychology', 'Mobile Design', 'Easter Egg'],
+    tags: ['UX Psychology', 'Mobile Design', 'Gamification'],
     modal: false
   },
   // Art
@@ -74,7 +73,7 @@ export const labExperiments = [
     description: 'Watercolor painting using coffee grounds.',
     image: 'lab/preview_coffee.png', 
     link: '/assets/lab/art/coffee.jpg',
-    tags: ['Art Experiment', 'Fine Art', 'Watercolor'],
+    tags: ['Art Experiment', 'Mixed Media', 'Organic Mediums'],
     modal: true
   },
   {
@@ -93,7 +92,7 @@ export const labExperiments = [
     id: 'dtp-1',
     category: 'Information Design',
     title: 'Print Advertisement',
-    description: 'An experimental print project designed to make fundamental computer science accessible to kids through visual storytelling and layout design.',
+    description: 'A high-impact promotional flyer designed for the Uncanny Coffee Hour podcast. Blends crisp print typography with brand-specific visual storytelling to capture the show\'s analog, paranormal aesthetic.',
     image: 'lab/preview_uchflyer.png',
     link: '/assets/lab/desktoppublishing/print_advert.jpg',
     tags: ['Print Design', 'Technical Communication', 'Typography'],
@@ -103,7 +102,7 @@ export const labExperiments = [
     id: 'dtp-2',
     category: 'Information Design',
     title: 'Business Card Design',
-    description: 'An experimental print project designed to make fundamental computer science accessible to kids through visual storytelling and layout design.',
+    description: 'Tactile brand identity for the Uncanny Coffee Hour podcast. A study in minimalist print design, ensuring essential contact architecture remains highly legible while maintaining the show\'s mysterious, cryptid-hunter vibe.',
     image: 'lab/preview_uch_businesscard.png',
     link: '/assets/lab/desktoppublishing/uchbusinesscard.jpg',
     tags: ['Print Design', 'Technical Communication', 'Typography'],
@@ -116,14 +115,14 @@ export const labExperiments = [
     description: 'An experimental print project designed to make fundamental computer science accessible to kids through visual storytelling and layout design.',
     image: 'lab/preview_binary_counting.png',
     link: '/assets/lab/desktoppublishing/BinaryCountingBook.pdf',
-    tags: ['Print Design', 'Technical Communication', 'Typography'],
+    tags: ['EdTech', 'Information Architecture', 'Print Design'],
     modal: false
   },
   {
     id: 'dtp-4',
     category: 'Volunteer / Print Design',
     title: 'Adaptive Shoot Flyer',
-    description: 'A high-fidelity mobile prototype exploring aggressive user-retention strategies and canine-based emotional conversion funnels. Click to test the primary CTA.',
+    description: 'Volunteer print design and layout for a community adaptive sports event. Focuses on clear, accessible information hierarchy and engaging visual composition to drive participation and awareness.',
     image: 'lab/preview_adaptshoot.png',
     link: '/assets/lab/desktoppublishing/POWLL_adaptive_shoot.jpg',
     tags: ['Desktop Publishing', 'Print Design', 'Volunteer Work'],
@@ -133,10 +132,10 @@ export const labExperiments = [
     id: 'dtp-5',
     category: 'Print Design',
     title: 'Mouse Pad Design',
-    description: 'Corporate mousepad',
+    description: 'Corporate brand identity translated into tactile desktop merchandise.',
     image: 'lab/preview_mousepad.png',
     link: '/assets/lab/desktoppublishing/2004-mousepad.jpg',
-    tags: ['Desktop Publishing', 'Print Design'],
+    tags: ['Brand Identity', 'Print Design'],
     modal: true
   },
   // other
@@ -148,17 +147,17 @@ export const labExperiments = [
     description: 'A paranormal folklore podcast co-hosted with Dr Kitsune and an AI-generated Puca named Saoirse. Exploring cryptids, yōkai, and Irish folklore through audio production, scriptwriting, and AI voice synthesis.',
     image: 'lab/preview_uch.png',
     link: 'https://www.uncannycoffeepodcast.com/episodes', 
-    tags: ['Audio Production', 'AI Integration', 'Content Strategy'],
+    tags: ['Audio Production', 'Voice AI', 'Creative Direction', 'Content Strategy'],
     modal: false
   },
   {
     id: 'other-2',
-    category: 'Web Development / UX',
-    title: 'AI prompt architecture', //td
-    description: 'A high-fidelity dark-mode dashboard prototype for a digital security platform. Explores complex data visualization, distilling threat intelligence and privacy metrics into scannable, high-contrast donut charts and status indicators.',
+    category: 'Generative AI / Multimedia',
+    title: 'AI Prompt Architecture: The Redcap', 
+    description: 'An experimental video prototype utilizing ElevenLabs to visualize a Redcap cryptid. Demonstrates the practical application of advanced prompt engineering and negative prompting to achieve specific, brand-aligned generative multimedia.',
     image: 'lab/preview_ai_redcap.png',
     link: '/assets/lab/other/redcap.mp4', 
-    tags: ['Data Visualization', 'Dashboard UI', 'UX Psychology', 'Cybersecurity UX'],
+    tags: ['Prompt Engineering', 'Generative AI', 'Video Production', 'Content Strategy'],
     modal: false
   },
 ];
