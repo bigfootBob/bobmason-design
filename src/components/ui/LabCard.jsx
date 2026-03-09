@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 import styles from './LabCard.module.scss';
 import Button from './Button'; 
 
@@ -179,7 +179,7 @@ const LabCard = ({ item }) => {
           
           <div className={styles.phoneSlider} onClick={(e) => e.stopPropagation()}>
             <img 
-              src={`/assets/images/${item.slideImage}`} 
+              src={item.slideImage} 
               alt="Hand holding phone with Odd Bob" 
               className={styles.phoneImage}
             />

@@ -4,8 +4,13 @@ export const SOCIALS = {
   EMAIL: 'mailto:bob.j.mason+resume@gmail.com' 
 };
 
-export const SITE_METADATA = {
-  TITLE: 'Robert J. Mason | Design Technologist',
-  COPYRIGHT_NAME: 'Robert J. Mason',
-  AVAILABLE_FOR_WORK: true,
+export const CLOUDINARY_CONFIG = {
+  CLOUD_NAME: 'BobMasonDesign',
+  BASE_URL: 'https://res.cloudinary.com/BobMasonDesign/image/upload/',
+  DEFAULT_TRANSFORM: 'f_auto,q_auto/' 
+};
+
+export const getCloudinaryUrl = (path, transformations = '') => {
+  const transformString = transformations ? `${transformations}/` : '';
+  return `${CLOUDINARY_CONFIG.BASE_URL}${CLOUDINARY_CONFIG.DEFAULT_TRANSFORM}${transformString}${path}`;
 };

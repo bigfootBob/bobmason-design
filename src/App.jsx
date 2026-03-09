@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { SITE_METADATA } from './data/constants';
+import SEO from './components/utils/Seo'; 
+import GoogleAnalytics from './components/utils/GoogleAnalytics';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import SkipLink from './components/accessibility/SkipLink';
@@ -12,30 +12,24 @@ import NotFound from './pages/NotFound';
 
 import './App.scss';
 
-function App() {
-  useEffect(() => {
-    document.title = SITE_METADATA.TITLE;
-  }, []);
-
+function App() { 
   return (
     <Router>
       <div className="app-wrapper">
+        <SEO />
+        <GoogleAnalytics />
         
         <ScrollToAnchor />
-
         <SkipLink />
-
         <Header />
 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/lab" element={<Lab />} />
-          {/* Fallback Route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
 
         <Footer />
-        
       </div>
     </Router>
   );

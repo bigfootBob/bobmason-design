@@ -1,3 +1,4 @@
+import { getCloudinaryUrl } from './constants';
 export const labExperiments = [
   // WEB Stuff first
   // -----------------------------
@@ -50,7 +51,7 @@ export const labExperiments = [
     description: 'A high-fidelity mobile prototype exploring aggressive user-retention strategies and canine-based emotional conversion funnels. Click to test the primary CTA.',
     image: 'lab/preview_likebob.png',
     customAction: 'slideUpPhone',
-    slideImage: 'likebob.png',
+    slideImage: getCloudinaryUrl('likebob_d4ipgo'),
     tags: ['UX Psychology', 'Mobile Design', 'Gamification'],
     modal: false
   },
@@ -60,9 +61,9 @@ export const labExperiments = [
     id: 'art-1',
     category: 'Illustration / Art',
     title: 'Jacques',
-    description: 'Watercolor painting of one of my heros, Jacques Cousteau.',
+    description: 'Watercolor painting of one of my heros, Jacques Cousteau. I have enjoyed working with watercolors much more over the past few years!',
     image: 'lab/preview_jc.png', 
-    link: '/assets/lab/art/JC.jpg',
+    link: getCloudinaryUrl('JC_trigvs'),
     tags: ['Illustration', 'Fine Art', 'Watercolor'],
     modal: true
   },
@@ -70,7 +71,7 @@ export const labExperiments = [
     id: 'art-2',
     category: 'Illustration / Art',
     title: 'Experiment with coffee',
-    description: 'Watercolor painting using coffee grounds.',
+    description: 'Watercolor painting using coffee grounds. I saw the consistency after running an espresso machine and thought of an experiment in re-use.',
     image: 'lab/preview_coffee.png', 
     link: '/assets/lab/art/coffee.jpg',
     tags: ['Art Experiment', 'Mixed Media', 'Organic Mediums'],
@@ -80,7 +81,7 @@ export const labExperiments = [
     id: 'art-3',
     category: 'Illustration / Art',
     title: 'Daniel at the beach',
-    description: 'Watercolor painting using coffee grounds.',
+    description: 'An acrylic study in minimalism and negative space. Inspired by a family day at the coast, this piece uses stark, high-contrast shadows to ground the subject while stripping away background noise to capture the brilliant, washed-out light of a sunny beach.',
     image: 'lab/preview_daniel.png', 
     link: '/assets/lab/art/daniel.jpg',
     tags: ['Fine Art', 'Watercolor'],
@@ -92,9 +93,10 @@ export const labExperiments = [
     id: 'dtp-1',
     category: 'Information Design',
     title: 'Print Advertisement',
-    description: 'A high-impact promotional flyer designed for the Uncanny Coffee Hour podcast. Blends crisp print typography with brand-specific visual storytelling to capture the show\'s analog, paranormal aesthetic.',
+    description: 'A high-impact promotional ad designed for the Uncanny Coffee Hour podcast in Weird Fiction Quarterly. Blends crisp print typography with brand-specific visual storytelling to capture the show\'s analog, paranormal aesthetic.',
     image: 'lab/preview_uchflyer.png',
-    link: '/assets/lab/desktoppublishing/print_advert.jpg',
+    // link: '/assets/lab/desktoppublishing/print_advert.jpg',
+    link: 'https://res.cloudinary.com/BobMasonDesign/image/upload/f_auto,q_auto/portfolio/lab/dtp/print_advert.jpg',
     tags: ['Print Design', 'Technical Communication', 'Typography'],
     modal: true
   },
