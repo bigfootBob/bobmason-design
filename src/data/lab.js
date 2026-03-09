@@ -12,11 +12,11 @@ export const labExperiments = [
     modal: true,
     tags: ['Customer Experience (CX)', 'Product Strategy', 'Support Flows', 'Mobile Design', 'Web Development'],
     gallery: [
-      '/assets/lab/web/nortonsupp/home.png',
-      '/assets/lab/web/nortonsupp/newsp.jpg',
-      '/assets/lab/web/nortonsupp/nortonsupport.jpg',
-      '/assets/lab/web/nortonsupp/nv-qr.jpg',
-      '/assets/lab/web/nortonsupp/port1.png'
+      getCloudinaryUrl('home_aweybj.png'), 
+      getCloudinaryUrl('newsp_ugbiuw'), 
+      getCloudinaryUrl('nortonsupport_lfxqzb'),
+      getCloudinaryUrl('nv-qr_v4qpzm'), 
+      getCloudinaryUrl('port1_ej67f0'),
     ]
   },
   {
@@ -25,7 +25,7 @@ export const labExperiments = [
     title: 'Identity Protection Service Prototype',
     description: 'A high-fidelity dark-mode dashboard prototype for a digital security platform. Explores complex data visualization, distilling threat intelligence and privacy metrics into scannable, high-contrast donut charts and status indicators.',
     image: 'lab/preview_websecurity.png',
-    link: '/assets/lab/web/appdesign.png', 
+    link: getCloudinaryUrl('appdesign_j849qs'),
     tags: ['Data Visualization', 'Dashboard UI', 'UX Psychology', 'Cybersecurity UX'],
     modal: true
   },
@@ -39,9 +39,9 @@ export const labExperiments = [
     modal: true,
     tags: ['Wireframing', 'Self-Service UX', 'Information Architecture', 'Support Flows'],
     gallery: [
-      '/assets/lab/prototypes/dwm.png',
-      '/assets/lab/prototypes/autofix.png',
-      '/assets/lab/prototypes/kbview.png'
+      getCloudinaryUrl('dwm_dlgdi2'),
+      getCloudinaryUrl('autofix_vk2gma'),
+      getCloudinaryUrl('kbview_e8wsag')
     ]
   },
   {
@@ -55,6 +55,7 @@ export const labExperiments = [
     tags: ['UX Psychology', 'Mobile Design', 'Gamification'],
     modal: false
   },
+//   https://res.cloudinary.com/bobmasondesign/image/upload/v1773024255/trophy_case_kt8jwe.png
   // Art
   // -----------------------------
   {
@@ -73,7 +74,7 @@ export const labExperiments = [
     title: 'Experiment with coffee',
     description: 'Watercolor painting using coffee grounds. I saw the consistency after running an espresso machine and thought of an experiment in re-use.',
     image: 'lab/preview_coffee.png', 
-    link: '/assets/lab/art/coffee.jpg',
+    link: getCloudinaryUrl('coffee_v4ethn'), 
     tags: ['Art Experiment', 'Mixed Media', 'Organic Mediums'],
     modal: true
   },
@@ -83,7 +84,7 @@ export const labExperiments = [
     title: 'Daniel at the beach',
     description: 'An acrylic study in minimalism and negative space. Inspired by a family day at the coast, this piece uses stark, high-contrast shadows to ground the subject while stripping away background noise to capture the brilliant, washed-out light of a sunny beach.',
     image: 'lab/preview_daniel.png', 
-    link: '/assets/lab/art/daniel.jpg',
+    link: getCloudinaryUrl('daniel_dxysp2'),
     tags: ['Fine Art', 'Watercolor'],
     modal: true
   },
@@ -95,8 +96,7 @@ export const labExperiments = [
     title: 'Print Advertisement',
     description: 'A high-impact promotional ad designed for the Uncanny Coffee Hour podcast in Weird Fiction Quarterly. Blends crisp print typography with brand-specific visual storytelling to capture the show\'s analog, paranormal aesthetic.',
     image: 'lab/preview_uchflyer.png',
-    // link: '/assets/lab/desktoppublishing/print_advert.jpg',
-    link: 'https://res.cloudinary.com/BobMasonDesign/image/upload/f_auto,q_auto/portfolio/lab/dtp/print_advert.jpg',
+    link: getCloudinaryUrl('print_advert_plqfzs'), 
     tags: ['Print Design', 'Technical Communication', 'Typography'],
     modal: true
   },
@@ -106,7 +106,7 @@ export const labExperiments = [
     title: 'Business Card Design',
     description: 'Tactile brand identity for the Uncanny Coffee Hour podcast. A study in minimalist print design, ensuring essential contact architecture remains highly legible while maintaining the show\'s mysterious, cryptid-hunter vibe.',
     image: 'lab/preview_uch_businesscard.png',
-    link: '/assets/lab/desktoppublishing/uchbusinesscard.jpg',
+    link: getCloudinaryUrl('uchbusinesscard_lnelgv'),
     tags: ['Print Design', 'Technical Communication', 'Typography'],
     modal: true
   },
@@ -116,7 +116,7 @@ export const labExperiments = [
     title: 'Binary Counting Book',
     description: 'An experimental print project designed to make fundamental computer science accessible to kids through visual storytelling and layout design.',
     image: 'lab/preview_binary_counting.png',
-    link: '/assets/lab/desktoppublishing/BinaryCountingBook.pdf',
+    link: 'assets/BinaryCountingBook.pdf',
     tags: ['EdTech', 'Information Architecture', 'Print Design'],
     modal: false
   },
@@ -126,7 +126,7 @@ export const labExperiments = [
     title: 'Adaptive Shoot Flyer',
     description: 'Volunteer print design and layout for a community adaptive sports event. Focuses on clear, accessible information hierarchy and engaging visual composition to drive participation and awareness.',
     image: 'lab/preview_adaptshoot.png',
-    link: '/assets/lab/desktoppublishing/POWLL_adaptive_shoot.jpg',
+    link: getCloudinaryUrl('POWLL_adaptive_shoot_axp0fp'),
     tags: ['Desktop Publishing', 'Print Design', 'Volunteer Work'],
     modal: true
   },
@@ -136,7 +136,7 @@ export const labExperiments = [
     title: 'Mouse Pad Design',
     description: 'Corporate brand identity translated into tactile desktop merchandise.',
     image: 'lab/preview_mousepad.png',
-    link: '/assets/lab/desktoppublishing/2004-mousepad.jpg',
+    link: getCloudinaryUrl('2004-mousepad_hs78ed'),
     tags: ['Brand Identity', 'Print Design'],
     modal: true
   },
@@ -158,7 +158,7 @@ export const labExperiments = [
     title: 'AI Prompt Architecture: The Redcap', 
     description: 'An experimental video prototype utilizing ElevenLabs to visualize a Redcap cryptid. Demonstrates the practical application of advanced prompt engineering and negative prompting to achieve specific, brand-aligned generative multimedia.',
     image: 'lab/preview_ai_redcap.png',
-    link: '/assets/lab/other/redcap.mp4', 
+    link: 'https://res.cloudinary.com/bobmasondesign/video/upload/v1773070967/redcap_orahyn.mp4', 
     tags: ['Prompt Engineering', 'Generative AI', 'Video Production', 'Content Strategy'],
     modal: false
   },

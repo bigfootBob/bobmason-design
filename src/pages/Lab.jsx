@@ -14,13 +14,12 @@ const Lab = () => {
         title="The Skunkworks | Lab" 
         description="Declassified experiments, multimedia architecture, and creative lore from the lab of Robert J. Mason." 
       />
+      
       <Helmet>
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         {easterEggItem?.slideImage && (
-          <link 
-            rel="preload" 
-            as="image" 
-            href={easterEggItem.slideImage} 
-          />
+          <link rel="preload" as="image" href={easterEggItem.slideImage} />
         )}
       </Helmet>
 

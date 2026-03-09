@@ -51,6 +51,25 @@ const LabCard = ({ item }) => {
     }, 100);
   };
 
+  const handleMouseEnter = () => {
+    if (item.link && (item.modal || !item.customAction)) {
+      const img = new Image();
+      img.src = item.link;
+    }
+
+    if (item.slideImage) {
+      const img = new Image();
+      img.src = item.slideImage;
+    }
+
+    if (item.gallery && item.gallery.length > 0) {
+      item.gallery.slice(0, 2).forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    }
+  };
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (!isModalOpen) return;
@@ -78,7 +97,7 @@ const LabCard = ({ item }) => {
 
   return (
     <>
-    <article className={styles.labCard}>
+    <article className={styles.labCard} onMouseEnter={handleMouseEnter}>
       
       <header className={styles.cardHeader}>
         <div className={styles.headerLeft}>
