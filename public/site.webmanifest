@@ -1,5 +1,5 @@
 {
-  "name": "BobMason",
+  "name": "Bob Mason",
   "short_name": "Mason",
   "icons": [
     {
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#2b373c",
-  "background_color": "#2b373c",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "display": "standalone"
 }

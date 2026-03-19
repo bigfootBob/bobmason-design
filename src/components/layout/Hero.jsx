@@ -8,10 +8,10 @@ const Hero = () => {
       
       <div className={styles.heroContent}>
         <h2 className={styles.heroHeadline}>
-          UX + Dev + Agentic AI + PO 
+          I have experience in tech & I get things done.
         </h2>
         <h1 className={styles.humanBreak}>
-          All in one human.
+          Bob the human.
         </h1>
       </div>
 

@@ -16,7 +16,15 @@
   justify-content: space-between;
   align-items: center;
 }
-
+.logoImage {
+  height: 1.5rem; // Adjust to match your font-size
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  // If your logo is a dark SVG, this ensures it looks crisp 
+  // against the Starfleet Cream background
+  filter: contrast(1.1); 
+}
 // --- BRANDING ---
 .brand {
   .logo {
@@ -26,32 +34,33 @@
     text-decoration: none;
     color: var(--color-console-charcoal);
     
+    .logoInitials {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      background-color: var(--color-edos-orange);
+      border: 3px solid var(--color-console-charcoal);
+      padding: 0.25rem;
+      border-radius: var(--border-radius-sharp);
+      transition: all 0.2s ease;
+    }
+
+    .logoTitle {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      display: none; 
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
     &:hover .logoInitials {
       background-color: var(--color-tos-olive);
       color: var(--color-starfleet-cream);
-    }
-  }
-
-  .logoInitials {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
-    border: 3px solid var(--color-console-charcoal);
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--border-radius-sharp);
-    transition: all 0.2s ease;
-  }
-
-  .logoTitle {
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    display: none; 
-
-    @media (min-width: 768px) {
-      display: block;
     }
   }
 }
