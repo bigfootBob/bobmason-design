@@ -9,7 +9,7 @@ const Footer = () => {
       <div className={styles.container}>
         
         <div className={styles.branding}>
-          <span className={styles.logoInitials}>R.M.</span>
+          <span className={styles.logoInitials}>B.J.M.</span>
           <p className={styles.signoff}>
             Architected in the Willamette Valley.<br/>
             Powered by podcasts and exceptionally strong coffee.

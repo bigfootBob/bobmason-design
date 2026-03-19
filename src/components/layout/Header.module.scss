@@ -6,61 +6,51 @@
   backdrop-filter: blur(8px); 
   border-bottom: 4px solid var(--color-console-charcoal);
   padding: 1rem 0;
-}
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logoImage {
-  height: 1.5rem; // Adjust to match your font-size
-  width: auto;
-  display: inline-block;
-  vertical-align: middle;
-  // If your logo is a dark SVG, this ensures it looks crisp 
-  // against the Starfleet Cream background
-  filter: contrast(1.1); 
-}
-// --- BRANDING ---
-.brand {
-  .logo {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
-    color: var(--color-console-charcoal);
-    
-    .logoInitials {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
-      font-weight: 700;
-      background-color: var(--color-edos-orange);
-      border: 3px solid var(--color-console-charcoal);
-      padding: 0.25rem;
-      border-radius: var(--border-radius-sharp);
-      transition: all 0.2s ease;
-    }
+    .brand {
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: var(--color-console-charcoal);
+        
+        .logoInitials {
+          font-family: var(--font-heading);
+          font-size: 1.25rem;
+          font-weight: 700;
+          background-color: var(--color-edos-orange);
+          border: 3px solid var(--color-console-charcoal);
+          padding: 0.25rem;
+          border-radius: var(--border-radius-sharp);
+          transition: all 0.2s ease;
+        }
 
-    .logoTitle {
-      font-family: var(--font-heading);
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 700;
-      display: none; 
+        .logoTitle {
+          font-family: var(--font-heading);
+          font-size: 0.95rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-weight: 700;
+          display: none; 
 
-      @media (min-width: 768px) {
-        display: block;
+          @media (min-width: 768px) {
+            display: block;
+          }
+        }
+
+        &:hover .logoInitials {
+          background-color: var(--color-tos-olive);
+          color: var(--color-starfleet-cream);
+        }
       }
-    }
-
-    &:hover .logoInitials {
-      background-color: var(--color-tos-olive);
-      color: var(--color-starfleet-cream);
     }
   }
 }

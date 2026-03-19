@@ -74,15 +74,16 @@
     }
   }
 
-  .copyright {
-    max-width: 1200px;
-    margin: 4rem auto 0;
-    padding: 0 2rem;
-    font-family: var(--font-heading);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    color: var(--color-console-charcoal);
-    opacity: 0.6;
-    text-align: center;
-  }
+}
+
+.copyright {
+  max-width: 1200px;
+  margin: 4rem auto 0;
+  padding: 0 2rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--color-console-charcoal);
+  opacity: 0.6;
+  text-align: center;
 }
