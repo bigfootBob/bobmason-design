@@ -13,9 +13,8 @@ const Comms = () => {
 
         <div className={styles.message}>
           <p>
-            I am currently interested in opportunities as design technologist (UX / engineering) and engineering leadership <strong>Beginning March 2026</strong>. 
-            If you need a Design Technologist to bridge the gap between your 
-            product strategy and front-end reality, contact me.
+            I am the human builder you need. I have experience in agenic AI, product, code and UX and can be your one man team.
+            To set up some time to discuss, contact me.
           </p>
         </div>
 

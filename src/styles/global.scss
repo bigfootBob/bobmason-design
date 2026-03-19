@@ -1,27 +1,4 @@
-:root {
-  // Core Palette
-  --color-starfleet-cream: #F4F1EA;
-  --color-console-charcoal: #2B2B2B;
-  --color-tos-olive: #4A5D23;
-  --color-walnut-wood: #5C4033;
-  --color-communicator-gold: #D4AF37;
-
-  // Typography
-  --font-heading: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-
-  // The Retro UI Tokens
-  --border-radius-pill: 50px;
-  --border-radius-sharp: 4px;
-  --shadow-retro: 6px 6px 0px var(--color-console-charcoal);
-}
-
-// ==========================================
-// MODERN CSS RESET
-// ==========================================
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+@use 'variables';
 
 * {
   margin: 0;
@@ -37,9 +14,10 @@ img, picture, video, canvas, svg {
   max-width: 100%;
 }
 
-// ==========================================
-// GLOBAL STYLES
-// ==========================================
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--color-starfleet-cream);
   color: var(--color-console-charcoal);
@@ -48,7 +26,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-// Global Typography
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -61,4 +38,3 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
 }
-

@@ -13,7 +13,7 @@ const Header = () => {
 
         <div className={styles.brand}>
           <NavLink to="/" className={styles.logo} onClick={closeMenu}>
-            <span className={styles.logoInitials}>R.M.</span>
+            <span className={styles.logoInitials}>BOB</span>
             <span className={styles.logoTitle}>Design Technologist</span>
           </NavLink>
         </div>
