@@ -4,7 +4,7 @@ export const testimonials = [
     name: 'Betty Duperray',
     title: 'Sr Director Technical Operations',
     date: 'Betty managed Bob directly',
-    text: 'Bob is a very versatile, intelligent and well rounded employee I have known for many years and in multiple capacities. Every projects I have worked on with Bob have been quite a delight. He does not hesitate to question the status quo and also provide alternatives so projects run smoothly and on time. He cares deeply about customers and their experience. He is a great front end developer, scrum master and UX designer which makes him an employee everyone wants in their teams. I highly recommend Bob!',
+    text: 'Bob is a very <span>versatile, intelligent and well rounded</span> employee I have known for many years and in multiple capacities. Every projects I have worked on with Bob have been quite a delight. He does not hesitate to question the status quo and also provide alternatives so projects run smoothly and on time. He cares deeply about customers and their experience. He is a great front end developer, scrum master and UX designer which makes him an employee everyone wants in their teams. I highly recommend Bob!',
     avatarInitials: 'BD'
   },
   {
