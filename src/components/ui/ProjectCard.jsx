@@ -1,8 +1,20 @@
 import Button from './Button';
 import styles from './ProjectCard.module.scss';
 
+const sanitizeUrl = (url) => {
+  if (!url) return null;
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === 'https:' || parsed.protocol === 'http:' ? url : null;
+  } catch {
+    return null;
+  }
+};
+
 const ProjectCard = ({ project }) => {
-  const { title, category, description, link, repo, preview, previewHover, isDarkMode } = project;
+  const { title, category, description, preview, previewHover, isDarkMode } = project;
+  const link = sanitizeUrl(project.link);
+  const repo = sanitizeUrl(project.repo);
 
   return (
     <article className={styles.retroCard}>
