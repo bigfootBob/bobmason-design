@@ -9,13 +9,12 @@ const Hero = () => {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.3, // Delays the start of each child animation
+            staggerChildren: 0.3,
             delayChildren: 0.2,
         },
     },
   };
 
-  // Variants for the individual text items
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -34,18 +33,18 @@ const Hero = () => {
       variants={containerVariants}>
 
       <div className={styles.heroContent}>
-        <motion.h2 
+        <motion.h1
           className={styles.heroHeadline}
           variants={itemVariants}
-        >    
+        >
           I have experience & I get things done
-        </motion.h2>
+        </motion.h1>
 
-        <motion.h1 
+        <motion.h2
           variants={itemVariants}
           className={styles.humanBreak}>
           Bob the human
-        </motion.h1>
+        </motion.h2>
       </div>
 
       <div className={styles.heroVisual}>

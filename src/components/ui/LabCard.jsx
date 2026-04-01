@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './LabCard.module.scss';
-import Button from './Button'; 
+import Button from './Button';
 
 const LabCard = ({ item }) => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -10,7 +10,17 @@ const LabCard = ({ item }) => {
   const hasGallery = item.gallery && item.gallery.length > 0;
   const [isEasterEggOpen, setIsEasterEggOpen] = useState(false);
   const navigate = useNavigate();
-  // Gallery Nav
+  const triggerRef = useRef(null);
+  const modalCloseRef = useRef(null);
+
+  useEffect(() => {
+    if (isModalOpen) {
+      modalCloseRef.current?.focus();
+    } else {
+      triggerRef.current?.focus();
+    }
+  }, [isModalOpen]);
+  
   const nextImage = (e) => {
     if (e) e.stopPropagation();
     setCurrentImageIndex((prevIndex) => 
@@ -102,9 +112,10 @@ const LabCard = ({ item }) => {
       <header className={styles.cardHeader}>
         <div className={styles.headerLeft}>
           {item.image && (
-            <div 
+            <div
               className={`${styles.thumbnailFrame} ${isAnimating ? styles.wigglePop : ''}`}
               onClick={handleThumbnailClick}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleThumbnailClick(); } }}
               role="button"
               tabIndex="0"
               aria-label="Wiggle image"
@@ -137,7 +148,7 @@ const LabCard = ({ item }) => {
         {(item.link || hasGallery || item.customAction) && (
           <div className={styles.cardActions}>
             {item.modal || item.customAction ? (
-              <Button onClick={handleActionClick} variant="design" type="button">
+              <Button ref={triggerRef} onClick={handleActionClick} variant="design" type="button">
                 Inspect Artifact &rarr;
               </Button>
             ) : (
@@ -158,8 +169,9 @@ const LabCard = ({ item }) => {
         aria-modal="true"
       >
         <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-          <button 
-            className={styles.closeModalBtn} 
+          <button
+            ref={modalCloseRef}
+            className={styles.closeModalBtn}
             onClick={() => setIsModalOpen(false)}
             aria-label="Close modal"
           >

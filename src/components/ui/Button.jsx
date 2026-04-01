@@ -1,16 +1,17 @@
+import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Button.module.scss';
 
-const Button = ({ 
-  children, 
+const Button = forwardRef(({
+  children,
   variant = 'primary', // primary | secondary | design | ghost
-  to, 
-  href, 
-  onClick, 
-  className = '', 
+  to,
+  href,
+  onClick,
+  className = '',
   icon,
-  ...props 
-}) => {
+  ...props
+}, ref) => {
 
   const classes = `${styles.btn} ${styles[variant]} ${className}`;
 
@@ -24,7 +25,7 @@ const Button = ({
   // Internal Link
   if (to) {
     return (
-      <Link to={to} className={classes} {...props}>
+      <Link ref={ref} to={to} className={classes} {...props}>
         {content}
       </Link>
     );
@@ -33,11 +34,12 @@ const Button = ({
   // External Link
   if (href) {
     return (
-      <a 
-        href={href} 
-        className={classes} 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      <a
+        ref={ref}
+        href={href}
+        className={classes}
+        target="_blank"
+        rel="noopener noreferrer"
         {...props}
       >
         {content}
@@ -47,10 +49,12 @@ const Button = ({
 
   // Standard Button (i.e. form submit)
   return (
-    <button className={classes} onClick={onClick} {...props}>
+    <button ref={ref} className={classes} onClick={onClick} {...props}>
       {content}
     </button>
   );
-};
+});
+
+Button.displayName = 'Button';
 
 export default Button;
