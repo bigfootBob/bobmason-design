@@ -3,6 +3,7 @@ import styles from './ProjectCard.module.scss';
 
 const sanitizeUrl = (url) => {
   if (!url) return null;
+  if (url.startsWith('/')) return url; // allow internal paths
   try {
     const parsed = new URL(url);
     return parsed.protocol === 'https:' || parsed.protocol === 'http:' ? url : null;
@@ -96,9 +97,13 @@ const ProjectCard = ({ project }) => {
         </div>
         <div className={styles.navlink}>
           {repo && (
-            <Button href={repo} variant="ghost" icon="</>">
-              Source Code
-            </Button>
+            repo === 'proprietary codebase' ? (
+              <span className={styles.proprietaryLabel}>&lt;/&gt; Proprietary Codebase</span>
+            ) : (
+              <Button href={repo} variant="ghost" icon="</>">
+                Source Code
+              </Button>
+            )
           )}
         </div>
       </div>

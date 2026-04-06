@@ -7,6 +7,7 @@ import SkipLink from './components/accessibility/SkipLink';
 import ScrollToAnchor from './components/utils/ScrollToAnchor';
 
 import Home from './pages/Home';
+import ProjectBrief from './pages/ProjectBrief';
 import NotFound from './pages/NotFound';
 
 import './App.scss';
@@ -24,6 +25,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/case-study/:id" element={<ProjectBrief />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 
