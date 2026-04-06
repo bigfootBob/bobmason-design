@@ -12,6 +12,8 @@ const sanitizeUrl = (url) => {
   }
 };
 
+const toJpg = (filename) => filename.replace(/\.webp$/i, '.jpg');
+
 const ProjectCard = ({ project }) => {
   const { title, category, preview, previewHover, isDarkMode } = project;
   const link = sanitizeUrl(project.link);
@@ -30,34 +32,37 @@ const ProjectCard = ({ project }) => {
               className={styles.imageLink}
               aria-label={`Open project: ${title}`}
             >
-              <img
-                src={`/assets/images/${preview}`}
-                alt={`Schematic design for ${title}`}
-                className={`${styles.schematicImg} ${styles.baseImg}`}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
-              />
-              {previewHover && (
+              <picture className={styles.basePicture}>
+                <source srcSet={`/assets/images/${preview}`} type="image/webp" />
                 <img
-                  src={`/assets/images/${previewHover}`}
-                  alt={`Hover preview for ${title}`}
-                  className={`${styles.schematicImg} ${styles.hoverImg}`}
-                  onError={(e) => {
-                    e.target.style.opacity = '0';
-                  }}
+                  src={`/assets/images/${toJpg(preview)}`}
+                  alt={`Schematic design for ${title}`}
+                  className={styles.schematicImg}
+                  onError={(e) => { e.target.style.display = 'none'; }}
                 />
+              </picture>
+              {previewHover && (
+                <picture className={styles.hoverPicture}>
+                  <source srcSet={`/assets/images/${previewHover}`} type="image/webp" />
+                  <img
+                    src={`/assets/images/${toJpg(previewHover)}`}
+                    alt={`Hover preview for ${title}`}
+                    className={`${styles.schematicImg} ${styles.hoverImg}`}
+                    onError={(e) => { e.target.style.opacity = '0'; }}
+                  />
+                </picture>
               )}
             </a>
           ) : (
-            <img 
-              src={`/assets/images/${preview}`} 
-              alt={`Schematic design for ${title}`} 
-              className={styles.schematicImg}
-              onError={(e) => {
-                e.target.style.display = 'none'; 
-              }}
-            />
+            <picture>
+              <source srcSet={`/assets/images/${preview}`} type="image/webp" />
+              <img
+                src={`/assets/images/${toJpg(preview)}`}
+                alt={`Schematic design for ${title}`}
+                className={styles.schematicImg}
+                onError={(e) => { e.target.style.display = 'none'; }}
+              />
+            </picture>
           )
         ) : (
           <div className={`${styles.wireframePlaceholder} ${isDarkMode ? styles.darkMode : ''}`}>
@@ -70,24 +75,16 @@ const ProjectCard = ({ project }) => {
       <div className={styles.cardContent}>
         <span className={styles.categoryTag}>{category}</span>
         <h3 className={styles.cardTitle}>{title}</h3>
-        <p className={styles.cardDetail}>
-          <strong>Description:</strong> {project.description}
-        </p>
-        <p className={styles.cardDetail}>
-          <strong>Inspiration:</strong> {project.inspiration}
-        </p>
-        <p className={styles.cardDetail}>
-          <strong>Features:</strong> {project.features}
-        </p>
-        <p className={styles.cardDetail}>
-          <strong>Challenges:</strong> {project.challenges}
-        </p>
-        <p className={styles.cardDetail}>
-          <strong>Lessons:</strong> {project.lessons}
-        </p>
-        <p className={styles.cardDetail}>
-          <strong>Future Directions:</strong> {project.futureDirections}
-        </p>
+        {[
+          ['Description', project.description],
+          ['Inspiration', project.inspiration],
+          ['Features', project.features],
+          ['Challenges', project.challenges],
+          ['Lessons', project.lessons],
+          ['Future Directions', project.futureDirections],
+        ].map(([label, value]) => value && (
+          <p key={label} className={styles.cardDetail}><strong>{label}:</strong> {value}</p>
+        ))}
         <div className={styles.cardActions}>
           {link && (
             <Button href={link} variant="secondary">

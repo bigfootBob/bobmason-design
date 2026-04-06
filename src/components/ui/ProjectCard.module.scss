@@ -142,28 +142,41 @@
 
 .imageLink {
   display: block;
-  width: 100%;
-  height: 100%;
-  position: relative;
+  position: absolute;
+  inset: 0;
   cursor: pointer;
 }
 
-.baseImg {
+.basePicture {
+  position: absolute;
+  inset: 20px;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+}
+
+.hoverPicture {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .hoverImg {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  mix-blend-mode: normal;
+  border: 2px solid #000;
   opacity: 0;
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition: opacity 0.35s ease;
 }
 
 .imageLink:hover .hoverImg,
 .imageLink:focus-visible .hoverImg {
   opacity: 1;
-  transform: scale(1.02);
 }
 
 .proprietaryLabel {
