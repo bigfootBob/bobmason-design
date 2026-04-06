@@ -23,7 +23,7 @@ const Home = () => {
           </div>
 
           <div className="project-grid">
-            {projects.map(project => (
+            {projects.filter(p => p.projectType === 'personal').map(project => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
@@ -40,7 +40,7 @@ const Home = () => {
           </div>
 
           <div className="project-grid">
-            {projects.map(project => (
+            {projects.filter(p => p.projectType === 'professional').map(project => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>

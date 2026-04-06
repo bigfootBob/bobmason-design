@@ -37,13 +37,13 @@ const Hero = () => {
           className={styles.heroHeadline}
           variants={itemVariants}
         >
-          I have experience & I get things done
+          seasoned expertise in end-to-end delivery of digital products
         </motion.h1>
 
         <motion.h2
           variants={itemVariants}
           className={styles.humanBreak}>
-          Bob the human
+          Handmade Human Design & Code
         </motion.h2>
       </div>
 

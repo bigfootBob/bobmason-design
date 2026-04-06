@@ -10,8 +10,8 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
-    transform: translate(-4px, -4px);
-    box-shadow: 10px 10px 0px var(--color-tos-olive);
+    // transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0px var(--color-tos-olive);
   }
 }
 
@@ -65,10 +65,11 @@
   color: var(--color-console-charcoal);
 }
 
-.cardDesc {
+.cardDetail {
   margin: 0 0 2rem 0;
   flex-grow: 1;
   color: var(--color-console-charcoal);
+  text-align: left;
 }
 
 .btnText, .btnSecondary {
@@ -163,4 +164,34 @@
 .imageLink:focus-visible .hoverImg {
   opacity: 1;
   transform: scale(1.02);
+}
+
+.navlink {
+  a {
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 2px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--color-tos-olive);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      color: var(--color-tos-olive);
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
 }

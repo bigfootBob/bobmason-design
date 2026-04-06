@@ -1,7 +1,7 @@
 .heroConsole {
   .heroContent {
     h1, h2 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-size: clamp(2.0rem, 4vw, 3.5rem);
       line-height: 1.1;
       font-weight: 800;
       margin-bottom: 2rem;
@@ -12,7 +12,8 @@
       }
     
       &.heroHeadline {
-        font-size: clamp(1.5rem, 4vw, 3rem);
+        font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+        font-style: italic;
         margin-top: 2rem;
         margin-bottom: 0.5rem;
       }

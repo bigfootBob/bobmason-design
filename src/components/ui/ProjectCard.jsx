@@ -12,7 +12,7 @@ const sanitizeUrl = (url) => {
 };
 
 const ProjectCard = ({ project }) => {
-  const { title, category, description, preview, previewHover, isDarkMode } = project;
+  const { title, category, preview, previewHover, isDarkMode } = project;
   const link = sanitizeUrl(project.link);
   const repo = sanitizeUrl(project.repo);
 
@@ -69,15 +69,32 @@ const ProjectCard = ({ project }) => {
       <div className={styles.cardContent}>
         <span className={styles.categoryTag}>{category}</span>
         <h3 className={styles.cardTitle}>{title}</h3>
-        <p className={styles.cardDesc}>{description}</p>
-        
+        <p className={styles.cardDetail}>
+          <strong>Description:</strong> {project.description}
+        </p>
+        <p className={styles.cardDetail}>
+          <strong>Inspiration:</strong> {project.inspiration}
+        </p>
+        <p className={styles.cardDetail}>
+          <strong>Features:</strong> {project.features}
+        </p>
+        <p className={styles.cardDetail}>
+          <strong>Challenges:</strong> {project.challenges}
+        </p>
+        <p className={styles.cardDetail}>
+          <strong>Lessons:</strong> {project.lessons}
+        </p>
+        <p className={styles.cardDetail}>
+          <strong>Future Directions:</strong> {project.futureDirections}
+        </p>
         <div className={styles.cardActions}>
           {link && (
             <Button href={link} variant="secondary">
-              Review &rarr;
+              View Project &rarr;
             </Button>
           )}
-
+        </div>
+        <div className={styles.navlink}>
           {repo && (
             <Button href={repo} variant="ghost" icon="</>">
               Source Code
