@@ -65,11 +65,20 @@
   color: var(--color-console-charcoal);
 }
 
+.bulletList {
+  margin: 0.5rem 0 0 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
 .cardDetail {
   margin: 0 0 2rem 0;
   flex-grow: 1;
   color: var(--color-console-charcoal);
   text-align: left;
+  white-space: pre-line;
 }
 
 .btnText, .btnSecondary {

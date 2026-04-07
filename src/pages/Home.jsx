@@ -18,7 +18,7 @@ const Home = () => {
               Personal Projects
             </h2>
             <p className="section-subtitle">
-              My current projects showcasing front-end development and product design.
+              Things I built because I couldn't help myself.
             </p>
           </div>
 
@@ -35,7 +35,7 @@ const Home = () => {
               Professional Projects
             </h2>
             <p className="section-subtitle">
-              My current projects showcasing front-end development and product design.
+              My previous work projects showcasing front-end development and design.
             </p>
           </div>
 

@@ -76,15 +76,25 @@ const ProjectCard = ({ project }) => {
         <span className={styles.categoryTag}>{category}</span>
         <h3 className={styles.cardTitle}>{title}</h3>
         {[
-          ['Description', project.description],
           ['Inspiration', project.inspiration],
           ['Features', project.features],
+          ['Tech Stack', project.stack],
           ['Challenges', project.challenges],
           ['Lessons', project.lessons],
           ['Future Directions', project.futureDirections],
-        ].map(([label, value]) => value && (
-          <p key={label} className={styles.cardDetail}><strong>{label}:</strong> {value}</p>
-        ))}
+        ].map(([label, value]) => {
+          if (!value || (Array.isArray(value) && value.length === 0)) return null;
+          return Array.isArray(value) ? (
+            <div key={label} className={styles.cardDetail}>
+              <strong>{label}:</strong>
+              <ul className={styles.bulletList}>
+                {value.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+          ) : (
+            <p key={label} className={styles.cardDetail}><strong>{label}:</strong> {value}</p>
+          );
+        })}
         <div className={styles.cardActions}>
           {link && (
             <Button href={link} variant="secondary">

@@ -6,7 +6,7 @@ const ResumeTimeline = () => {
     <section className={styles.resumeSection}>
       <div className={styles.sectionHeader}>
         <h2 className={styles.sectionTitle}>Résumé</h2>
-        <p className={styles.sectionSubtitle}>Service record credentials.</p>
+        <p className={styles.sectionSubtitle}>Experience & credentials.</p>
       </div>
 
       <div className={styles.timeline}>
