@@ -1,3 +1,4 @@
+import { Mail, Link } from 'lucide-react';
 import styles from './Comms.module.scss';
 import { SOCIALS } from '../../data/constants';
 
@@ -20,7 +21,7 @@ const Comms = () => {
 
         <div className={styles.actionGrid}>
           <a href={SOCIALS.EMAIL} className={styles.transmitBtn}>
-            <span className={styles.btnIcon}>✉</span>
+            <Mail size={20} className={styles.btnIcon} />
             <span>Transmit Data (Email)</span>
           </a>
 
@@ -30,7 +31,7 @@ const Comms = () => {
             rel="noopener noreferrer" 
             className={styles.linkBtn}
           >
-            <span className={styles.btnIcon}>in</span>
+            <Link size={20} className={styles.btnIcon} />
             <span>Establish Link (LinkedIn)</span>
           </a>
         </div>

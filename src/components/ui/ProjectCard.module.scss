@@ -146,6 +146,7 @@
   .retroCard:hover & {
     transform: scale(1.05);
     opacity: 1;
+    padding: 20px;
   }
 }
 
@@ -189,12 +190,18 @@
 }
 
 .proprietaryLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: var(--font-heading);
-  font-size: 0.9rem;
   font-weight: 700;
+  font-size: 0.9rem;
   color: var(--color-console-charcoal);
-  opacity: 0.5;
+  opacity: 0.45;
   cursor: default;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-top: 12px;
 }
 
 .navlink {

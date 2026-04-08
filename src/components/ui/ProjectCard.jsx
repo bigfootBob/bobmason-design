@@ -17,6 +17,7 @@ const toJpg = (filename) => filename.replace(/\.webp$/i, '.jpg');
 const ProjectCard = ({ project }) => {
   const { title, category, preview, previewHover, isDarkMode } = project;
   const link = sanitizeUrl(project.link);
+  const isProprietaryRepo = project.repo === 'proprietary codebase';
   const repo = sanitizeUrl(project.repo);
 
   return (
@@ -103,14 +104,12 @@ const ProjectCard = ({ project }) => {
           )}
         </div>
         <div className={styles.navlink}>
-          {repo && (
-            repo === 'proprietary codebase' ? (
-              <span className={styles.proprietaryLabel}>&lt;/&gt; Proprietary Codebase</span>
-            ) : (
-              <Button href={repo} variant="ghost" icon="</>">
-                Source Code
-              </Button>
-            )
+          {isProprietaryRepo ? (
+            <span className={styles.proprietaryLabel}>&lt;/&gt; Proprietary Code</span>
+          ) : repo && (
+            <Button href={repo} variant="ghost" icon="</>">
+              Source Code
+            </Button>
           )}
         </div>
       </div>
