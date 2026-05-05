@@ -5,7 +5,7 @@ export const experience = [
     title: 'Technical Product Owner | Lead BI & Accessibility Engineer',
     organization: 'Sprouts Farmers Market',
     date: '2025 - Present',
-    description: 'UX & Accessibility Engineering lead. Designed and prototyped WCAG 2.1 compliant Power BI dashboards, ensuring data visualization accessibility across the enterprise.',
+    description: 'UX & Accessibility Engineering lead. Designed and prototyped WCAG 2.1 compliant Power BI dashboards, ensuring data visualization accessibility across the ecommerce space.',
   },
   {
     id: 'e2',
@@ -13,7 +13,7 @@ export const experience = [
     title: 'Sr. Digital Product Owner | Technical UX Lead',
     organization: 'Allstate Identity Protection',
     date: '2023 - 2025',
-    description: 'Acted as the Technical PO for Identity Protection mobile platforms. Bridged the gap between complex security requirements and engineering execution, translating privacy protocols into seamless user experiences.',
+    description: 'Acted as the Technical Product Owner for Identity Protection mobile platforms. Bridged the gap between complex security requirements and engineering execution, translating privacy protocols into seamless user experiences.',
   },
   {
     id: 'e3',
@@ -21,7 +21,7 @@ export const experience = [
     title: 'Sr. Design Technologist & UX Principal',
     organization: 'Gen™',
     date: '2022 - 2023',
-    description: 'Prototyping & Development lead. Wrote production-ready HTML/CSS/JS code to prototype complex interactions, establishing the "Design Engineering" practice to accelerate handoffs between creative and dev teams.',
+    description: 'Prototyping & Development lead. Wrote production-ready HTML/CSS/JS code to prototype complex interactions, establishing the "Design Engineering" practice to accelerate handoffs between creative and development teams.',
   },
   {
     id: 'e4',
@@ -37,7 +37,7 @@ export const experience = [
     title: 'Agile Coach / Sr. Scrum Master',
     organization: 'NortonLifeLock',
     date: '2020 - 2021',
-    description: 'Drove process improvements toward consistent delivery of working product. Acted as an Agile coach to the organization, mentoring teams on Lean/Agile values and cross-team synchronization.',
+    description: 'Drove process improvements toward consistent delivery of working product. Acted as an Agile coach to the organization, mentoring teams on lean/agile values and cross-team synchronization.',
   },
   {
     id: 'e6',

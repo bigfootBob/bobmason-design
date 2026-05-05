@@ -21,7 +21,7 @@ export const projects = [
     ],
     stack: 'React 19 with Vite 7 build tool, React Router DOM 7, Sass/SCSS, i18next + react-i18next, Python script (`fetch_episodes.py`), Google Analytics, ESLint with plugins for React hooks, React Refresh, and jsx-a11y (accessibility), Server-side PHP',
     challenges: 'Learning to build and edit a podcast from scratch, and designing a brand identity that felt fun and authentic.',
-    lessons: 'I had a CORS wildcard on `submit.php` that was a "get it working first" decision that needed tightening later, However, I also learned that PHP and React can coexist simply (rather than standing up a full backend for the story submission form, a single `submit.php` file does the job cleanly). Games were scope creep that was totally worth it.', // In this project I wanted to focus on the human element of storytelling so I had to learn to use AI assistive tools for cover imagery, voice work and special effects through elevenlabs.io and Gemini.\n\nBuilding a custom audio experience on the web app to fetch the latest episodes from Buzzsprout & optimize the UX of the website. The entire project has been a fun & rewarding challenge.',
+    lessons: 'I had a CORS wildcard on `submit.php` that was a "get it working first" decision that needed tightening later, However, I also learned that PHP and React can coexist simply (rather than standing up a full backend for the story submission form, a single `submit.php` file does the job cleanly). Games were scope creep that was totally worth it.',
     futureDirections: 'I would like to expand the SEO footprint of the site, helping to advertise the podcast, as well as cross-promote with other fun projects we are doing like the Baku.',
     projectType: 'personal',
     isDarkMode: false,
