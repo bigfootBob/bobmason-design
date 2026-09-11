@@ -1,16 +1,6 @@
 import Button from './Button';
 import styles from './ProjectCard.module.scss';
-
-const sanitizeUrl = (url) => {
-  if (!url) return null;
-  if (url.startsWith('/')) return url; // allow internal paths
-  try {
-    const parsed = new URL(url);
-    return parsed.protocol === 'https:' || parsed.protocol === 'http:' ? url : null;
-  } catch {
-    return null;
-  }
-};
+import sanitizeUrl from '../../utils/sanitizeUrl';
 
 const toJpg = (filename) => filename.replace(/\.webp$/i, '.jpg');
 

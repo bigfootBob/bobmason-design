@@ -54,9 +54,7 @@ const Home = () => {
           <Testimonials />
         </div>
 
-        <div id="comms">
-          <Comms />
-        </div>
+        <Comms />
 
       </main>
 
