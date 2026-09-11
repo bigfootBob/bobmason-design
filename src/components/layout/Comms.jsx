@@ -21,7 +21,7 @@ const Comms = () => {
 
         <div className={styles.actionGrid}>
           <a href={SOCIALS.EMAIL} className={styles.transmitBtn}>
-            <Mail size={20} className={styles.btnIcon} />
+            <Mail size={20} className={styles.btnIcon} aria-hidden="true" focusable="false" />
             <span>Transmit Data (Email)</span>
           </a>
 
@@ -31,7 +31,7 @@ const Comms = () => {
             rel="noopener noreferrer" 
             className={styles.linkBtn}
           >
-            <Link size={20} className={styles.btnIcon} />
+            <Link size={20} className={styles.btnIcon} aria-hidden="true" focusable="false" />
             <span>Establish Link (LinkedIn)</span>
           </a>
         </div>

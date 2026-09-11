@@ -7,6 +7,7 @@ import SkipLink from './components/accessibility/SkipLink';
 import ScrollToAnchor from './components/utils/ScrollToAnchor';
 
 import Home from './pages/Home';
+import Lab from './pages/Lab';
 import ProjectBrief from './pages/ProjectBrief';
 import Timer from './pages/Timer';
 import NotFound from './pages/NotFound';
@@ -29,6 +30,7 @@ function AppShell() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/lab" element={<Lab />} />
         <Route path="/case-study/:id" element={<ProjectBrief />} />
         <Route path="/timer" element={<Timer />} />
         <Route path="*" element={<NotFound />} />

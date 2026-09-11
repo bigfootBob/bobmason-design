@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './LabCard.module.scss';
 import Button from './Button';
+import sanitizeUrl from '../../utils/sanitizeUrl';
 
 const LabCard = ({ item }) => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -12,14 +13,23 @@ const LabCard = ({ item }) => {
   const navigate = useNavigate();
   const triggerRef = useRef(null);
   const modalCloseRef = useRef(null);
+  const closePhoneRef = useRef(null);
 
   useEffect(() => {
     if (isModalOpen) {
       modalCloseRef.current?.focus();
+    } else if (!isEasterEggOpen) {
+      triggerRef.current?.focus();
+    }
+  }, [isModalOpen, isEasterEggOpen]);
+
+  useEffect(() => {
+    if (isEasterEggOpen) {
+      closePhoneRef.current?.focus();
     } else {
       triggerRef.current?.focus();
     }
-  }, [isModalOpen]);
+  }, [isEasterEggOpen]);
   
   const nextImage = (e) => {
     if (e) e.stopPropagation();
@@ -82,8 +92,10 @@ const LabCard = ({ item }) => {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (!isModalOpen) return;
-      if (e.key === 'Escape') setIsModalOpen(false);
+      if (e.key === 'Escape') {
+        if (isModalOpen) setIsModalOpen(false);
+        if (isEasterEggOpen) setIsEasterEggOpen(false);
+      }
 
       if (hasGallery) {
         if (e.key === 'ArrowRight') nextImage();
@@ -136,7 +148,7 @@ const LabCard = ({ item }) => {
       </header>
 
       <div className={styles.cardContent}>
-        <h3 className={styles.cardTitle}>{item.title}</h3>
+        <h2 className={styles.cardTitle}>{item.title}</h2>
         <p className={styles.cardDesc}>{item.description}</p>
         
         <ul className={styles.tagList}>
@@ -152,7 +164,7 @@ const LabCard = ({ item }) => {
                 Inspect Artifact &rarr;
               </Button>
             ) : (
-              <Button href={item.link} variant="design">
+              <Button href={sanitizeUrl(item.link)} variant="design">
                 Inspect Artifact &rarr;
               </Button>
             )}
@@ -167,6 +179,7 @@ const LabCard = ({ item }) => {
         onClick={() => setIsModalOpen(false)}
         role="dialog"
         aria-modal="true"
+        aria-label={`${item.title} gallery`}
       >
         <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
           <button
@@ -206,7 +219,13 @@ const LabCard = ({ item }) => {
       )}
 
       {isEasterEggOpen && item.customAction === 'slideUpPhone' && (
-        <div className={styles.easterEggOverlay} onClick={() => setIsEasterEggOpen(false)}>
+        <div
+          className={styles.easterEggOverlay}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Odd Bob — send some love"
+          onClick={() => setIsEasterEggOpen(false)}
+        >
           
           <div className={styles.phoneSlider} onClick={(e) => e.stopPropagation()}>
             <img 
@@ -219,7 +238,7 @@ const LabCard = ({ item }) => {
               Send Love
             </button>
             
-            <button className={styles.closePhoneBtn} onClick={() => setIsEasterEggOpen(false)}>
+            <button ref={closePhoneRef} className={styles.closePhoneBtn} onClick={() => setIsEasterEggOpen(false)}>
               Close
             </button>
           </div>

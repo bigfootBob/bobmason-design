@@ -18,6 +18,12 @@ img, picture, video, canvas, svg {
   box-sizing: border-box;
 }
 
+:focus-visible {
+  outline: 3px solid var(--color-tos-olive);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 body {
   background-color: var(--color-starfleet-cream);
   color: var(--color-console-charcoal);
