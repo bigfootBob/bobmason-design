@@ -1,16 +1,58 @@
-# React + Vite
+# bobmason-design
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Source for my personal portfolio site, [bobmason.design](https://bobmason.design): case studies, a lab of side projects, my résumé timeline and testimonials.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React 19](https://react.dev) + [Vite](https://vite.dev)
+- [React Router](https://reactrouter.com) for routing
+- [Framer Motion](https://motion.dev) for animation
+- Sass (CSS Modules) for styling
+- [Lucide](https://lucide.dev) icons
+- [Cloudinary](https://cloudinary.com) for image hosting
+- ESLint for linting
 
-## React Compiler
+## Getting started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Requires Node.js 20.19 or newer.
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Then open the local URL Vite prints (usually http://localhost:5173).
+
+## Scripts
+
+| Command           | What it does                         |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start the dev server with hot reload |
+| `npm run build`   | Build for production into `dist/`    |
+| `npm run preview` | Serve the production build locally   |
+| `npm run lint`    | Run ESLint                           |
+
+## Project structure
+
+```
+src/
+├── pages/        # Routes: Home, Lab, ProjectBrief (case studies), Timer, NotFound
+├── components/
+│   ├── layout/   # Header, Hero, Footer, Testimonials, Comms
+│   ├── ui/       # Reusable pieces: cards, buttons, résumé timeline
+│   ├── utils/    # SEO, analytics, scroll helpers
+│   └── accessibility/
+├── data/         # Content: projects, lab, experience, testimonials
+├── styles/       # Global Sass and variables
+└── utils/
+```
+
+Most site content lives in `src/data/`, so updating projects or experience usually means editing those files rather than components.
+
+## Accessibility & security
+
+The site includes a skip link and is checked with WCAG and security scans. A Content Security Policy is set in `index.html`.
+
+## Contact
+
+[LinkedIn](https://www.linkedin.com/in/robert-bob-mason/) · [GitHub](https://github.com/BigfootBob)
