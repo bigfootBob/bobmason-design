@@ -1,10 +1,18 @@
 export const experience = [
   {
-    id: 'e1',
+    id: 'e0',
     type: 'currentrole',
+    title: 'Site Experience Web Developer',
+    organization: 'Sprouts Farmers Market',
+    date: '2026 - Present',
+    description: 'Back to engineering full-time after years of pairing product leadership with hands-on prototyping and personal builds, now focused on Sprouts.com, a public WordPress platform on WP Engine. Eliminated migration errors across environments, including plugin failures traced to an outdated PHP version in the CLI. Maintain and upgrade PHP and JavaScript plugins, extend APIs with supporting documentation, and improved server logging for faster troubleshooting. Ships WCAG 2.1 and security-compliant code, carrying accessibility standards over from the BI team.',
+  },
+  {
+    id: 'e1',
+    type: 'role',
     title: 'Technical Product Owner | Lead BI & Accessibility Engineer',
     organization: 'Sprouts Farmers Market',
-    date: '2025 - Present',
+    date: '2025 - 2026',
     description: 'UX & Accessibility Engineering lead. Designed and prototyped WCAG 2.1 compliant Power BI dashboards, ensuring data visualization accessibility across the ecommerce space.',
   },
   {
